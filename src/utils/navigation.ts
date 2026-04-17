@@ -4,7 +4,6 @@ const navBarLinks = [
   { name: '360 องศา', url: '/360' },
   { name: 'วีดีโออวยพร', url: '/guestbook' },
   { name: 'AI Photobooth', url: '/ai-photobooth' },
-  { name: 'Products', url: '/products' },
   { name: 'Services', url: '/services' },
   { name: 'Contact', url: '/contact' },
 ];
@@ -14,7 +13,6 @@ const footerLinks = [
     section: 'Ecosystem',
     links: [
       { name: 'Documentation', url: '/welcome-to-docs/' },
-      { name: 'Tools & Equipment', url: '/products' },
       { name: 'Construction Services', url: '/services' },
     ],
   },
