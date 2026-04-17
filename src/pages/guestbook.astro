@@ -1,0 +1,157 @@
+---
+// Import the necessary components
+import MainLayout from '@/layouts/MainLayout.astro';
+import HeroSection from '@components/sections/landing/HeroSection.astro';
+import ClientsSection from '@components/sections/landing/ClientsSection.astro';
+import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
+import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
+import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
+import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
+import heroImage from '@images/hero-guestbook.jpg';
+import features from '@data/features/guestbook.json';
+import pricing from '@data/pricing/guestbook.json';
+import featureImage from '@images/features-guestbook.jpg';
+import construction from '@images/construction-image.avif';
+import tools from '@images/automated-tools.avif';
+import dashboard from '@images/dashboard-image.avif';
+import testimonial1 from '@images/testimonials/1.png';
+import testimonial2 from '@images/testimonials/2.png';
+import testimonial3 from '@images/testimonials/3.png';
+import testimonial4 from '@images/testimonials/4.png';
+import testimonial5 from '@images/testimonials/5.png';
+import testimonial6 from '@images/testimonials/6.png';
+import testimonial7 from '@images/testimonials/7.png';
+import { partnersData } from '@/data_files/constants';
+
+const avatarSrcs = [
+  testimonial4,
+  testimonial5,
+  testimonial6,
+  testimonial7,
+];
+---
+
+<MainLayout>
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="Explore ScrewFast on GitHub"
+    url="https://github.com/mearashadowfax/ScrewFast"
+  />
+
+  <HeroSection
+    title=`Video Guest Book <span class="text-yellow-500">สมุดอวยพรรูปแบบใหม่</span>`
+    subTitle="เปลี่ยนคำอวยพรธรรมดา ให้เป็นวิดีโอความทรงจำที่มีเสียงและภาพ"
+    primaryBtn="จองคิว"
+    primaryBtnURL="/contact"
+    secondaryBtn="บริการทั้งหมด"
+    secondaryBtnURL="/products"
+    withReview={true}
+    avatars={avatarSrcs}
+    rating=`<span class="font-bold">4.9</span> / 5`
+    starCount={4}
+    reviews=`From Over <span class="font-bold">1k+</span> Reviews`
+    src={heroImage}
+    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+  />
+
+  <ClientsSection
+    title="มั่นใจด้วยมาตรฐานที่องค์เลือกใช้"
+    subTitle="Experience the reliability chosen by industry giants."
+    partners={partnersData}
+  />
+
+  <FeaturesGeneral
+    title="เก็บทุกความรู้สึกในงานของคุณ"
+    subTitle="Video Guest Book ของเรา ช่วยบันทึกทุกคำอวยพรและโมเมนต์สำคัญจากแขกในงาน ไม่ว่าจะเป็นงานแต่ง งานบริษัท หรือปาร์ตี้ ให้คุณได้เก็บความทรงจำในรูปแบบวิดีโอที่ดูเมื่อไหร่ก็ยังรู้สึกเหมือนวันนั้น"
+    src={featureImage}
+    alt="ScrewFast products in floating boxes"
+    features={features}
+  />
+
+  <FeaturesNavs
+    title={`ทำไม <span class="text-yellow-500">Video Guest Book</span> ของเราถึงเหมาะกับงานของคุณ`}'`}
+    tabs={[
+      {
+        heading: 'อุปกรณ์ครบ พร้อมใช้งานหน้างาน',
+        content: 'พร๊อพตกแต่ง โต๊ะเตรียมให้เรียบร้อย พร้อมทีมงานดูแล ให้แขกสามารถเข้ามาอัดคลิปได้ต่อเนื่องตลอดงาน',
+        svg: 'tools',
+        src: tools,
+        alt: 'อุปกรณ์ Video Guest Book พร้อมกล้องและไฟ',
+        first: true,
+      },
+      {
+        heading: 'ใช้งานง่าย สนุกได้ทันที',
+        content: 'ไม่ต้องมีประสบการณ์ก็ถ่ายได้ ระบบใช้งานง่าย พร้อมหน้าจอพรีวิว เห็นภาพทันทีก่อนกดถ่าย สนุกได้ทั้งงาน',
+        svg: 'dashboard',
+        src: dashboard,
+        alt: 'การใช้งาน Video Guest Book ในงานอีเวนต์',
+        second: true,
+      },
+      {
+        heading: 'ครบทุกฟีเจอร์ที่ต้องมี',
+        content: 'รวบรวมวิดีโอจากแขกทุกคน ส่งไฟล์ให้หลังจบงาน เก็บไว้ดูย้อนหลังหรือแชร์ให้เพื่อนและครอบครัวได้',
+        svg: 'house',
+        src: construction,
+        alt: 'ตัวอย่างวิดีโอคำอวยพรจากแขกในงาน',
+      },
+    ]}
+  />
+
+  <TestimonialsSectionAlt
+    title="รีวิวจริงลูกค้าที่ใช้บริการ"
+    testimonials={[
+      {
+        content:
+          'ขอบคุณทีมงาน SNAP a FOTO มากๆค่ะ ดูแลดีมากเลยค่ะ มีพร็อพถ่ายรูปเยอะมากๆ แขกในงาน คุณพ่อ คุณแม่ ลุงๆป้าๆ สนุกกันมากเลยค่ะ ได้ภาพสวยๆเป็นที่ระลึกกับบ้านทุกคนเลย ไม่ผิดหวังที่เลือกใช้บริการค่ะ ประทับใจมากค่ะ ขอบคุณนร้าคร้าาาา🥰🥰🥰',
+        author: 'Avanew Plus',
+        role: 'Facebook',
+        avatarSrc: testimonial1.src,
+        avatarAlt: 'Avanew Plus portrait',
+      },
+      {
+        content:
+          'เป็นบูธที่สนุกที่สุดในงาน แขกไม่เหงาเลย เดินถ่ายแบบบุฟเฟ่ต์ ภาพสวย เทมเพลตแก้ได้ตลอด ไม่ถูกใจก็แก้ได้เรื่อยๆ มีqr code ให้โหลดและอัพลงโซเชียลได้เลย สะดวกมาก ราคาย่อมเยาว์มาก งานแต่งต้องมีนะคะ ร้านนี้คุยง่าย แนะนำค่า ❤️❤️❤️❤️❤️',
+        author: 'Pimjira Suksao',
+        role: 'Facebook',
+        avatarSrc: testimonial2.src,
+        avatarAlt: 'Pimjira Suksao portrait',
+      },
+      {
+        content:
+          'ขอบคุณทีมงานโฟโต้บูธมากๆนะคะ งานดูมีสีสันขึ้นมากเลย พร็อพถ่ายรูปมีให้เลือกเล่นเยอะแยะมากมาย แขกในงานสนุกสนานกันทุกคน ทีมงานบริการดี ดูแลดี เชิญแขกถ่ายรูปให้ตลอด ดูแลแบบมืออาชีพจริงๆค่ะ ไว้มีโอกาสอื่นๆจะมาใช้บริการใหม่นะคะ',
+        author: 'Chartparamee Chaiyadej',
+        role: 'Google',
+        avatarSrc: testimonial3.src,
+        avatarAlt: 'Chartparamee Chaiyadej portrait',
+      },
+    ]}
+  />
+
+  <PricingSection pricing={pricing} />
+
+  <section class="mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-8 max-w-3xl text-center">
+      <h2 class="text-3xl font-bold tracking-tight text-neutral-800 md:text-5xl">
+        Video Presentation
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600">
+        ดูตัวอย่างการใช้งาน Video Guest Book ของเราผ่านวิดีโอด้านล่าง
+      </p>
+    </div>
+
+    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-sm">
+      <div class="aspect-video w-full">
+        <iframe
+          class="h-full w-full"
+          src="https://www.youtube.com/embed/BcUxK9W82t4"
+          title="Video Guest Book presentation"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</MainLayout>

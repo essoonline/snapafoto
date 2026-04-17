@@ -1,0 +1,55 @@
+{
+  "title": "แพ็กเกจราคา",
+  "subTitle": "บริการครบ พร้อมราคาที่ชัดเจน ไม่มีค่าใช้จ่ายแอบแฝง",
+  "badge": "คุ้มค่า",
+  "thirdOption": "มากกว่า >5 ชั่วโมง",
+  "btnText": "ติดต่อเรา",
+
+  "starterKit": {
+    "name": "2 ชั่วโมง",
+    "description": "Best option for DIY projects",
+    "price": "3,900",
+    "cents": ".00",
+    "billingFrequency": "บาท",
+    "features": [
+      "บันทึกวิดีโอคำอวยพรจากแขก",
+      "คุณภาพ HD 1080P",
+      "ลูกค้าได้ไฟล์วิดีโอทั้งหมด",
+      "เก็บความทรงจำได้ย้อนดูตลอด"
+    ],
+    "purchaseBtnTitle": "จองคิว",
+    "purchaseLink": "https://lin.ee/qscp8TG"
+  },
+
+  "professionalToolbox": {
+    "name": "3 ชั่วโมง",
+    "description": "Best for large scale uses",
+    "price": "4,900",
+    "cents": ".00",
+    "billingFrequency": "บาท",
+    "features": [
+      "บันทึกวิดีโอคำอวยพรจากแขก",
+      "คุณภาพ HD 1080P",
+      "ลูกค้าได้ไฟล์วิดีโอทั้งหมด",
+      "เก็บความทรงจำได้ย้อนดูตลอด"
+    ],
+    "purchaseBtnTitle": "จองคิว",
+    "purchaseLink": "https://lin.ee/qscp8TG"
+  },
+
+  "premiumStudio": {
+    "name": "4 ชั่วโมง",
+    "description": "Best for full-service event teams",
+    "price": "5,900",
+    "cents": ".00",
+    "billingFrequency": "บาท",
+    "features": [
+      "บันทึกวิดีโอคำอวยพรจากแขก",
+      "คุณภาพ HD 1080P",
+      "ลูกค้าได้ไฟล์วิดีโอทั้งหมด",
+      "เก็บความทรงจำได้ย้อนดูตลอด"
+    ],
+    "purchaseBtnTitle": "จองคิว",
+    "purchaseLink": "https://lin.ee/qscp8TG"
+  }
+}
