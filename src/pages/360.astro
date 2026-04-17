@@ -99,6 +99,7 @@ const videos = [
               <video
                 class="h-full w-full"
                 data-video-element
+                muted
               >
                 <source src={video.src} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -114,6 +115,9 @@ const videos = [
         const container = containerElement as HTMLElement;
         const video = container.querySelector('[data-video-element]') as HTMLVideoElement;
         if (video) {
+          // Keep all preview videos silent.
+          video.muted = true;
+
           // Play/pause on click
           container.addEventListener('click', () => {
             if (video.paused) {
