@@ -12,10 +12,10 @@ import pricing from '@data/pricing/360.json';
 import construction from '@images/construction-image.avif';
 import tools from '@images/automated-tools.avif';
 import dashboard from '@images/dashboard-image.avif';
-import video360_1 from '@images/360_1.mp4?url';
-import video360_2 from '@images/360_2.mp4?url';
-import video360_3 from '@images/360_3.mp4?url';
-import video360_4 from '@images/360_4.mp4?url';
+import video360_1 from '@images/360_1-web.mp4?url';
+import video360_2 from '@images/360_2-web.mp4?url';
+import video360_3 from '@images/360_3-web.mp4?url';
+import video360_4 from '@images/360_4-web.mp4?url';
 import testimonial1 from '@images/testimonials/1.png';
 import testimonial2 from '@images/testimonials/2.png';
 import testimonial3 from '@images/testimonials/3.png';
@@ -99,9 +99,11 @@ const videos = [
               <video
                 class="h-full w-full"
                 data-video-element
+                preload="none"
+                playsinline
                 muted
               >
-                <source src={video.src} type="video/mp4" />
+                <source data-video-source data-src={video.src} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -114,13 +116,41 @@ const videos = [
       document.querySelectorAll('[data-video-container]').forEach((containerElement) => {
         const container = containerElement as HTMLElement;
         const video = container.querySelector('[data-video-element]') as HTMLVideoElement;
+        const source = video?.querySelector('[data-video-source]') as HTMLSourceElement | null;
+
+        const loadVideo = () => {
+          if (!video || !source || !source.dataset.src || source.src) return;
+          source.src = source.dataset.src;
+          video.load();
+        };
+
         if (video) {
           // Keep all preview videos silent.
           video.muted = true;
+          video.preload = 'metadata';
+
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(
+              (entries, currentObserver) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    loadVideo();
+                    currentObserver.unobserve(entry.target);
+                  }
+                });
+              },
+              { rootMargin: '150px 0px' }
+            );
+
+            observer.observe(container);
+          } else {
+            loadVideo();
+          }
 
           // Play/pause on click
           container.addEventListener('click', () => {
             if (video.paused) {
+              loadVideo();
               video.play();
             } else {
               video.pause();
