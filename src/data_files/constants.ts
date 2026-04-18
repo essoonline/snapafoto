@@ -5,14 +5,12 @@ import client6 from '@images/clients/6.png';
 import client8 from '@images/clients/8.png';
 
 export const SITE = {
-  title: 'ScrewFast',
+  title: 'โฟโต้บูธ ตู้ถ่ายรูป งานแต่ง และอีเว้นท์ - SNAP a FOTO',
   tagline: 'Top-quality Hardware Tools',
-  description:
-    'ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.',
-  description_short:
-    'ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.',
-  url: 'https://screwfast.uk',
-  author: 'Emil Gulamov',
+  description: 'SNAP a FOTO บริการเช่าโฟโต้บูธและตู้ถ่ายรูปสำหรับงานแต่ง อีเว้นท์ ปาร์ตี้ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด กล้อง DSLR คมชัด แชร์โซเชียลได้ทันที',
+  description_short: 'SNAP a FOTO เช่าโฟโต้บูธงานแต่ง อีเว้นท์ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด พร้อมพร็อพและกรอบรูปออกแบบเอง',
+  url: 'https://snapafoto.com',
+  author: 'Worawuth S.',
 };
 
 export const SEO = {

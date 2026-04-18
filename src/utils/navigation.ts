@@ -1,11 +1,13 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: 'โฟโต้บูธ', url: '/' },
+  //{ name: 'ตู้สติกเกอร์', url: '/sticker-booth' },
   { name: '360 องศา', url: '/360' },
   { name: 'วีดีโออวยพร', url: '/guestbook' },
-  { name: 'AI Photobooth', url: '/ai-photobooth' },
-  { name: 'Services', url: '/services' },
-  { name: 'Contact', url: '/contact' },
+  //{ name: 'AI Photobooth', url: '/ai-photobooth' },
+  //{ name: 'ฉากหลัง', url: '/backdrop' },
+  //{ name: 'Services', url: '/services' },
+  { name: 'ติดต่อเรา', url: '/contact' },
 ];
 // An array of links for footer
 const footerLinks = [
