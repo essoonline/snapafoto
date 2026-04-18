@@ -22,7 +22,7 @@ import testimonial4 from '@images/testimonials/4.png';
 import testimonial5 from '@images/testimonials/5.png';
 import testimonial6 from '@images/testimonials/6.png';
 import testimonial7 from '@images/testimonials/7.png';
-import { partnersData } from '@/data_files/constants';
+import { partnersData, SITE } from '@/data_files/constants';
 
 const avatarSrcs = [
   testimonial4,
@@ -30,9 +30,33 @@ const avatarSrcs = [
   testimonial6,
   testimonial7,
 ];
+
+const pageTitle: string = `Video Guest Book | ${SITE.title}`;
+const metaDescription =
+  'Video Guest Book โดย SNAP a FOTO ช่วยเก็บคำอวยพรและความทรงจำจากแขกในงานแต่ง งานอีเว้นท์ และงานบริษัท ในรูปแบบวิดีโอที่เปิดดูย้อนหลังได้';
+const ogTitle = 'Video Guest Book | SNAP a FOTO';
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/guestbook`,
+    url: `${SITE.url}/guestbook`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"

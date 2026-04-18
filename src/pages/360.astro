@@ -23,7 +23,7 @@ import testimonial4 from '@images/testimonials/4.png';
 import testimonial5 from '@images/testimonials/5.png';
 import testimonial6 from '@images/testimonials/6.png';
 import testimonial7 from '@images/testimonials/7.png';
-import { partnersData } from '@/data_files/constants';
+import { partnersData, SITE } from '@/data_files/constants';
 
 const avatarSrcs = [
   testimonial4,
@@ -50,9 +50,33 @@ const videos = [
     src: video360_4,
   },
 ];
+
+const pageTitle: string = `360 Photo Booth | ${SITE.title}`;
+const metaDescription =
+  'บริการ 360 Photo Booth สำหรับงานแต่ง งานอีเว้นท์ งานบริษัท และปาร์ตี้ พร้อมวิดีโอ Slow Motion เอฟเฟกต์สวย และทีมงานดูแลหน้างานโดย SNAP a FOTO';
+const ogTitle = '360 Photo Booth | SNAP a FOTO';
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/360`,
+    url: `${SITE.url}/360`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"

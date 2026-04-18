@@ -22,7 +22,7 @@ import testimonial4 from '@images/testimonials/4.png';
 import testimonial5 from '@images/testimonials/5.png';
 import testimonial6 from '@images/testimonials/6.png';
 import testimonial7 from '@images/testimonials/7.png';
-import { partnersData } from '@/data_files/constants';
+import { partnersData, SITE } from '@/data_files/constants';
 
 const avatarSrcs = [
   testimonial4,
@@ -30,9 +30,33 @@ const avatarSrcs = [
   testimonial6,
   testimonial7,
 ];
+
+const pageTitle: string = `ตู้สติกเกอร์ | ${SITE.title}`;
+const metaDescription =
+  'ตู้สติกเกอร์โดย SNAP a FOTO สำหรับงานแต่ง งานอีเว้นท์ และปาร์ตี้ ถ่ายง่าย พิมพ์ไว ได้ภาพน่ารักพร้อมดีไซน์สติกเกอร์ที่ปรับให้เข้ากับธีมงาน';
+const ogTitle = 'ตู้สติกเกอร์ | SNAP a FOTO';
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/sticker-booth`,
+    url: `${SITE.url}/sticker-booth`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"

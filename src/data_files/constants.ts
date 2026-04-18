@@ -6,7 +6,7 @@ import client8 from '@images/clients/8.png';
 
 export const SITE = {
   title: 'โฟโต้บูธ ตู้ถ่ายรูป งานแต่ง และอีเว้นท์ - SNAP a FOTO',
-  tagline: 'Top-quality Hardware Tools',
+  tagline: 'โฟโต้บูธและตู้ถ่ายรูป สำหรับงานแต่งงานและอีเว้นท์',
   description: 'SNAP a FOTO บริการเช่าโฟโต้บูธและตู้ถ่ายรูปสำหรับงานแต่ง อีเว้นท์ ปาร์ตี้ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด กล้อง DSLR คมชัด แชร์โซเชียลได้ทันที',
   description_short: 'SNAP a FOTO เช่าโฟโต้บูธงานแต่ง อีเว้นท์ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด พร้อมพร็อพและกรอบรูปออกแบบเอง',
   url: 'https://snapafoto.com',

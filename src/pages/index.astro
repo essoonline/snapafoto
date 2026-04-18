@@ -22,7 +22,7 @@ import testimonial4 from '@images/testimonials/4.png';
 import testimonial5 from '@images/testimonials/5.png';
 import testimonial6 from '@images/testimonials/6.png';
 import testimonial7 from '@images/testimonials/7.png';
-import { partnersData } from '@/data_files/constants';
+import { partnersData, SITE } from '@/data_files/constants';
 
 const avatarSrcs = [
   testimonial4,
@@ -30,13 +30,37 @@ const avatarSrcs = [
   testimonial6,
   testimonial7,
 ];
+
+const pageTitle: string = SITE.title;
+const metaDescription =
+  'SNAP a FOTO บริการโฟโต้บูธและตู้ถ่ายรูปสำหรับงานแต่ง งานอีเว้นท์ งานบริษัท และปาร์ตี้ พร้อมอุปกรณ์ทันสมัย พร็อพหลากหลาย และบริการแบบมืออาชีพ';
+const ogTitle = SITE.title;
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': SITE.url,
+    url: SITE.url,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
+    btnTitle="Explore SNAP a FOTO on GitHub"
+    url="https://github.com/mearashadowfax/SNAP-a-FOTO" 
   />
 
   <HeroSection

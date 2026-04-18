@@ -22,7 +22,7 @@ import testimonial4 from '@images/testimonials/4.png';
 import testimonial5 from '@images/testimonials/5.png';
 import testimonial6 from '@images/testimonials/6.png';
 import testimonial7 from '@images/testimonials/7.png';
-import { partnersData } from '@/data_files/constants';
+import { partnersData, SITE } from '@/data_files/constants';
 
 const avatarSrcs = [
   testimonial4,
@@ -30,9 +30,33 @@ const avatarSrcs = [
   testimonial6,
   testimonial7,
 ];
+
+const pageTitle: string = `AI Photobooth | ${SITE.title}`;
+const metaDescription =
+  'AI Photobooth จาก SNAP a FOTO เปลี่ยนลุค เปลี่ยนหน้า และสร้างภาพสนุกได้ทันที เหมาะสำหรับงานแต่ง งานอีเว้นท์ งานบริษัท และกิจกรรมเปิดตัวสินค้า';
+const ogTitle = 'AI Photobooth | SNAP a FOTO';
 ---
 
-<MainLayout>
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/ai-photobooth`,
+    url: `${SITE.url}/ai-photobooth`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
   <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"
