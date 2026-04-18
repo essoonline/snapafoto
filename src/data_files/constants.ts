@@ -5,7 +5,7 @@ import client6 from '@images/clients/6.png';
 import client8 from '@images/clients/8.png';
 
 export const SITE = {
-  title: 'โฟโต้บูธ ตู้ถ่ายรูป งานแต่ง และอีเว้นท์ - SNAP a FOTO',
+  title: 'SNAP a FOTO',
   tagline: 'โฟโต้บูธและตู้ถ่ายรูป สำหรับงานแต่งงานและอีเว้นท์',
   description: 'SNAP a FOTO บริการเช่าโฟโต้บูธและตู้ถ่ายรูปสำหรับงานแต่ง อีเว้นท์ ปาร์ตี้ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด กล้อง DSLR คมชัด แชร์โซเชียลได้ทันที',
   description_short: 'SNAP a FOTO เช่าโฟโต้บูธงานแต่ง อีเว้นท์ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด พร้อมพร็อพและกรอบรูปออกแบบเอง',
@@ -34,12 +34,11 @@ export const SEO = {
 };
 
 export const OG = {
-  locale: 'en_US',
+  locale: 'th_TH',
   type: 'website',
   url: SITE.url,
-  title: `${SITE.title}: Hardware Tools & Construction Services`,
-  description:
-    "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: SITE.title,
+  description: SITE.description,
   image: ogImageSrc,
 };
 

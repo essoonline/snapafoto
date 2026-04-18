@@ -1,44 +1,40 @@
 // Define data structures for services and success stories
 export const servicesData = [
   {
-    title: 'Explore Advice and Explanations',
-    description:
-      "Dive deep into helpful guides and explanations for all of ScrewFast's features",
+    title: 'โฟโต้บูธมาตรฐาน',
+    description: 'บริการโฟโต้บูธพร้อมกล้อง DSLR คมชัด ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด',
     icon: 'guides',
-    url: '#',
+    url: '/',
   },
   {
-    title: 'Discover Integrations',
-    description:
-      'Supercharge Your Workflow. Seamless integrations with all your favorite tools',
-    icon: 'puzzle',
-    url: '#',
-  },
-  {
-    title: 'Expert Services',
-    description: "Go beyond tools with ScrewFast's expert services",
+    title: '360 Photo Booth',
+    description: 'วิดีโอ Slow Motion 360 องศา สุดอลังการสำหรับทุกงาน',
     icon: 'rocket',
-    url: '#',
+    url: '/360',
   },
   {
-    title: 'Cutting-Edge Tools',
-    description:
-      "Build Smarter, Faster. Experience next-level efficiency with ScrewFast's cutting-edge construction tools",
-    icon: 'hammer',
-    url: '#',
-  },
-  {
-    title: 'Simple Plans',
-    description:
-      "Boost your efficiency with ScrewFast's straightforward, value-driven plans",
+    title: 'วีดีโออวยพร',
+    description: 'ตู้รับส่งวีดีโออวยพรจากแขกของคุณ เก็บไว้เป็นความทรงจำ',
     icon: 'sparks',
-    url: '#',
+    url: '/guestbook',
   },
   {
-    title: 'Community Forum',
-    description: 'Learn, share, and connect with other ScrewFast users',
+    title: 'AI Photobooth',
+    description: 'เปลี่ยนทุกภาพเป็นงานศิลป์ด้วย AI สร้างสรรค์รูปแบบพิเศษ',
+    icon: 'puzzle',
+    url: '/ai-photobooth',
+  },
+  {
+    title: 'ตู้สติกเกอร์',
+    description: 'พิมพ์รูปสติกเกอร์ตกแต่งเองได้ทันที สนุกและน่าเก็บสะสม',
+    icon: 'hammer',
+    url: '/sticker-booth',
+  },
+  {
+    title: 'ฉากหลัง (Backdrop)',
+    description: 'ฉากหลังสวยงามหลากหลายสไตล์ ออกแบบได้ตามธีมงาน',
     icon: 'community',
-    url: '#',
+    url: '/backdrop',
   },
 ];
 
@@ -46,9 +42,9 @@ export const successStoriesData = [
   {
     image:
       'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80',
-    alt: 'Image Description',
+    alt: 'ลูกค้า SNAP a FOTO',
     description:
-      'See how ScrewFast has empowered businesses of all sizes to achieve outstanding results.',
-    learnMoreUrl: '#',
+      'ลูกค้าของเราประทับใจบริการโฟโต้บูธและตู้ถ่ายรูปคุณภาพสูง พร้อมทีมงานดูแลหน้างานตลอดงาน',
+    learnMoreUrl: '/contact',
   },
 ];

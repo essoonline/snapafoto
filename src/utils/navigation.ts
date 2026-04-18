@@ -12,10 +12,10 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: 'Ecosystem',
+    section: 'บริการของเรา',
     links: [
-      { name: 'Documentation', url: '/welcome-to-docs/' },
-      { name: 'Construction Services', url: '/services' },
+      { name: '360 Photo Booth', url: '/360' },
+      { name: 'วีดีโออวยพร', url: '/guestbook' },
     ],
   },
   {
@@ -29,9 +29,9 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: 'https://www.facebook.com/',
+  facebook: 'https://www.facebook.com/snapafoto',
   x: 'https://twitter.com/',
-  github: 'https://github.com/mearashadowfax/ScrewFast',
+  github: 'https://github.com/',
   google: 'https://www.google.com/',
   slack: 'https://slack.com/',
 };
