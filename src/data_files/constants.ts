@@ -1,8 +1,8 @@
-import ogImageSrc from '@images/social.png';
-import client10 from '@images/clients/10.png';
-import client3 from '@images/clients/3.png';
-import client6 from '@images/clients/6.png';
-import client8 from '@images/clients/8.png';
+import ogImageSrc from '@images/social.webp';
+import client10 from '@images/clients/10.webp';
+import client3 from '@images/clients/3.webp';
+import client6 from '@images/clients/6.webp';
+import client8 from '@images/clients/8.webp';
 
 export const SITE = {
   title: 'SNAP a FOTO',
