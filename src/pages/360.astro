@@ -6,12 +6,11 @@ import ClientsSection from '@components/sections/landing/ClientsSection.astro';
 import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
-
 import heroImage from '@images/hero-360.webp';
 import pricing from '@data/pricing/360.json';
-import construction from '@images/construction-image.avif';
-import tools from '@images/automated-tools.avif';
-import dashboard from '@images/dashboard-image.avif';
+import features1 from '@images/photobooth-features1.jpg';
+import features2 from '@images/photobooth-features2.jpg';
+import features3 from '@images/photobooth-features3.jpg';
 import video360_1 from '@images/360_1-web.mp4?url';
 import video360_2 from '@images/360_2-web.mp4?url';
 import video360_3 from '@images/360_3-web.mp4?url';
@@ -203,7 +202,7 @@ const ogTitle = '360 Photo Booth | SNAP a FOTO';
         content:
           'แท่นหมุน 360 องศา ขนาดใหญ่ รองรับได้ถึง 2-4 คน พร้อมอาร์มกล้องและชุดไฟ LED รอบแท่น ให้คลิปออกมาสวย สด ทุกมุม',
         svg: 'tools',
-        src: tools,
+        src: features1,
         alt: 'แท่น 360 Photo Booth พร้อมชุดไฟ LED สำหรับงานอีเวนต์',
         first: true,
       },
@@ -212,7 +211,7 @@ const ogTitle = '360 Photo Booth | SNAP a FOTO';
         content:
           'ไม่ต้องมีประสบการณ์ก็เล่นได้ Staff ประจำบูธคอยดูแลและกำกับท่าทางให้ ได้คลิปสวยทุกครั้งที่ขึ้นแท่น',
         svg: 'dashboard',
-        src: dashboard,
+        src: features2,
         alt: 'Staff ดูแล 360 Photo Booth ในงานอีเวนต์',
         second: true,
       },
@@ -221,7 +220,7 @@ const ogTitle = '360 Photo Booth | SNAP a FOTO';
         content:
           'ทั้ง Slow Motion เพลงประกอบ Overlay ชื่องาน และแชร์คลิปผ่าน QR Code ให้แขกได้วิดีโอกลับบ้านเป็นความทรงจำทันที',
         svg: 'house',
-        src: construction,
+        src: features3,
         alt: 'ฟีเจอร์ 360 Photo Booth Slow Motion และแชร์ QR Code',
       },
     ]}
