@@ -334,6 +334,42 @@ export const Icons = {
     fill: 'currentColor',
     title: 'Slack',
   },
+  emailFooter: {
+    paths: [
+      {
+        d: 'M1.5 4.5h21v15h-21v-15Zm1.842 1.5 8.658 6.494L20.658 6H3.342Zm17.658 12v-10.127l-8.55 6.413a.75.75 0 0 1-.9 0L3 7.873V18h18Z',
+      },
+    ],
+    class:
+      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+    viewBox: '0 0 24 24',
+    fill: 'currentColor',
+    title: 'Email',
+  },
+  instagramFooter: {
+    paths: [
+      {
+        d: 'M7.75 1.5h8.5A6.257 6.257 0 0 1 22.5 7.75v8.5a6.257 6.257 0 0 1-6.25 6.25h-8.5a6.257 6.257 0 0 1-6.25-6.25v-8.5A6.257 6.257 0 0 1 7.75 1.5Zm0 1.75A4.505 4.505 0 0 0 3.25 7.75v8.5a4.505 4.505 0 0 0 4.5 4.5h8.5a4.505 4.505 0 0 0 4.5-4.5v-8.5a4.505 4.505 0 0 0-4.5-4.5h-8.5Zm9.188 1.938a1.312 1.312 0 1 1 0 2.624 1.312 1.312 0 0 1 0-2.624ZM12 6.75A5.252 5.252 0 1 1 6.75 12 5.258 5.258 0 0 1 12 6.75Zm0 1.75A3.5 3.5 0 1 0 15.5 12 3.504 3.504 0 0 0 12 8.5Z',
+      },
+    ],
+    class:
+      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+    viewBox: '0 0 24 24',
+    fill: 'currentColor',
+    title: 'Instagram',
+  },
+  youtubeFooter: {
+    paths: [
+      {
+        d: 'M23.25 8.903a4.25 4.25 0 0 0-2.99-3.008C17.634 5.25 12 5.25 12 5.25s-5.634 0-8.26.645A4.25 4.25 0 0 0 .75 8.903 44.83 44.83 0 0 0 .75 15.1a4.25 4.25 0 0 0 2.99 3.006c2.626.644 8.26.644 8.26.644s5.634 0 8.26-.644a4.25 4.25 0 0 0 2.99-3.006 44.83 44.83 0 0 0 0-6.197ZM10 15.25v-6.5L15.75 12 10 15.25Z',
+      },
+    ],
+    class:
+      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+    viewBox: '0 0 24 24',
+    fill: 'currentColor',
+    title: 'YouTube',
+  },
   quotation: {
     paths: [
       {

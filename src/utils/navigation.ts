@@ -12,28 +12,29 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: 'บริการของเรา',
+    section: 'Our Services',
     links: [
-      { name: '360 Photo Booth', url: '/360' },
+      { name: 'โฟโต้บูธ', url: '/' },
+      { name: '360 องศา', url: '/360' },
       { name: 'วีดีโออวยพร', url: '/guestbook' },
     ],
   },
   {
     section: 'Company',
     links: [
-      { name: 'About us', url: '#' },
-      { name: 'Careers', url: '#' },
-      { name: 'Customers', url: '#' },
+      { name: 'Contact', url: '/contact' },
+      {
+        name: 'Reviews',
+        url: 'https://www.facebook.com/snapafoto/reviews',
+      },
     ],
   },
 ];
 // An object of links for social icons
 const socialLinks = {
-  facebook: 'https://www.facebook.com/snapafoto',
-  x: 'https://twitter.com/',
-  github: 'https://github.com/',
-  google: 'https://www.google.com/',
-  slack: 'https://slack.com/',
+  email: 'mailto:snapafoto@yahoo.com',
+  instagram: 'https://www.instagram.com/snapafoto.th/',
+  youtube: 'https://www.youtube.com/@snapafoto-xt1',
 };
 
 export default {
