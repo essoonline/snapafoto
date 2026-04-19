@@ -1,40 +1,23 @@
 ---
-// Import the necessary components
 import MainLayout from '@/layouts/MainLayout.astro';
-import HeroSection from '@components/sections/landing/HeroSection.astro';
-import ClientsSection from '@components/sections/landing/ClientsSection.astro';
-import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
-import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
-import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
-import PricingSection from '@components/sections/pricing/PricingSection.astro';
-
-import heroImage from '@images/hero-image.webp';
-import features from '@data/features/backdrop.json';
-import pricing from '@data/pricing/backdrop.json';
-import featureImage from '@images/features-image.webp';
-import construction from '@images/construction-image.avif';
-import tools from '@images/automated-tools.avif';
-import dashboard from '@images/dashboard-image.avif';
-import testimonial1 from '@images/testimonials/1.webp';
-import testimonial2 from '@images/testimonials/2.webp';
-import testimonial3 from '@images/testimonials/3.webp';
-import testimonial4 from '@images/testimonials/4.webp';
-import testimonial5 from '@images/testimonials/5.webp';
-import testimonial6 from '@images/testimonials/6.webp';
-import testimonial7 from '@images/testimonials/7.webp';
-import { partnersData, SITE } from '@/data_files/constants';
-
-const avatarSrcs = [
-  testimonial4,
-  testimonial5,
-  testimonial6,
-  testimonial7,
-];
+import type { ImageMetadata } from 'astro';
+import { SITE } from '@/data_files/constants';
 
 const pageTitle: string = `ฉากหลัง | ${SITE.title}`;
-const metaDescription =
-  'บริการฉากหลังและแบคดรอปสำหรับงานแต่ง งานอีเว้นท์ และงานเปิดตัว โดย SNAP a FOTO ออกแบบให้เข้ากับธีมงาน พร้อมติดตั้งและดูแลครบจบในที่เดียว';
+const metaDescription = '';
 const ogTitle = 'ฉากหลัง | SNAP a FOTO';
+
+const backdropImages = Object.entries(
+  import.meta.glob('../images/backdrop/*.webp', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, ImageMetadata>
+)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, image], index) => ({
+    src: image.src,
+    alt: `Backdrop image ${index + 1} (${path.split('/').pop()})`,
+  }));
 ---
 
 <MainLayout
@@ -57,123 +40,102 @@ const ogTitle = 'ฉากหลัง | SNAP a FOTO';
     inLanguage: 'th-TH',
   }}
 >
-  <HeroSection
-    title=`โฟโต้บูธ ตู้ถ่ายรูป <span
-        class="text-yellow-500">งานแต่ง และอีเว้นท์</span>`
-    subTitle="ตอบโจทย์ทุกการใช้งาน ทั้งเรื่องพื้นที่ ราคา และฟังก์ชัน"
-    primaryBtn="จองคิว"
-    primaryBtnURL="/contact"
-    secondaryBtn="บริการทั้งหมด"
-    secondaryBtnURL="/services"
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.9</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">1k+</span> Reviews`
-    src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
-  />
-
-  <ClientsSection
-    title="มั่นใจด้วยมาตรฐานที่องค์เลือกใช้"
-    subTitle="Experience the reliability chosen by industry giants."
-    partners={partnersData}
-  />
-
-  <FeaturesGeneral
-    title="ตอบโจทย์ทุกงานอีเวนต์ของคุณ"
-    subTitle="ที่ PhotoBooth ของเรา เราเข้าใจความต้องการที่หลากหลายของงานอีเวนต์ ไม่ว่าจะเป็นงานแต่ง งานบริษัท หรืองานปาร์ตี้ เราพร้อมมอบทั้งอุปกรณ์ทันสมัยและบริการแบบมืออาชีพ เพื่อให้ทุกช่วงเวลาของคุณเต็มไปด้วยความสนุกและความทรงจำที่น่าประทับใจ"
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
-    features={features}
-  />
-
-  <FeaturesNavs
-    title={`ทำไม <span class="text-yellow-500">PhotoBooth</span> ของเราถึงเหมาะกับทุกงาน`}
-    tabs={[
+  <section class="mx-auto max-w-[85rem] px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {
-        heading: 'อุปกรณ์ครบ จบในจุดเดียว',
-        content:
-          'กล้องคุณภาพสูง พร้อมชุดไฟสตูดิโอและฉากหลัง จัดเต็มทุกองค์ประกอบ ให้ภาพออกมาสวย คม ชัด ทุกช็อต',
-        svg: 'tools',
-        src: tools,
-        alt: 'อุปกรณ์กล้องและไฟสตูดิโอสำหรับโฟโต้บูธ',
-        first: true,
-      },
-      {
-        heading: 'ใช้งานง่าย สนุกได้ทันที',
-        content:
-          'ไม่ต้องมีประสบการณ์ก็ถ่ายได้ ระบบใช้งานง่าย พร้อมหน้าจอพรีวิว เห็นภาพทันทีก่อนกดถ่าย สนุกได้ทั้งงาน',
-        svg: 'dashboard',
-        src: dashboard,
-        alt: 'หน้าจอพรีวิวโฟโต้บูธใช้งานง่าย',
-        second: true,
-      },
-      {
-        heading: 'ครบทุกฟีเจอร์ที่ต้องมี',
-        content:
-          'ทั้งพิมพ์ภาพทันที เลือกกรอบรูปได้ และแชร์ผ่าน QR Code ให้แขกในงานได้รูปกลับไปเป็นความทรงจำทันที',
-        svg: 'house',
-        src: construction,
-        alt: 'ตัวอย่างฟีเจอร์การใช้งานโฟโต้บูธในงานจริง',
-      },
-    ]}
-  />
-
-  <TestimonialsSectionAlt
-    title="รีวิวจริงลูกค้าที่ใช้บริการ"
-    testimonials={[
-      {
-        content:
-          'ขอบคุณทีมงาน SNAP a FOTO มากๆค่ะ ดูแลดีมากเลยค่ะ มีพร็อพถ่ายรูปเยอะมากๆ แขกในงาน คุณพ่อ คุณแม่ ลุงๆป้าๆ สนุกกันมากเลยค่ะ ได้ภาพสวยๆเป็นที่ระลึกกับบ้านทุกคนเลย ไม่ผิดหวังที่เลือกใช้บริการค่ะ ประทับใจมากค่ะ ขอบคุณนร้าคร้าาาา🥰🥰🥰',
-        author: 'Avanew Plus',
-        role: 'Facebook',
-        avatarSrc: testimonial1.src,
-        avatarAlt: 'Avanew Plus portrait',
-      },
-      {
-        content:
-          'เป็นบูธที่สนุกที่สุดในงาน แขกไม่เหงาเลย เดินถ่ายแบบบุฟเฟ่ต์ ภาพสวย เทมเพลตแก้ได้ตลอด ไม่ถูกใจก็แก้ได้เรื่อยๆ มีqr code ให้โหลดและอัพลงโซเชียลได้เลย สะดวกมาก ราคาย่อมเยาว์มาก งานแต่งต้องมีนะคะ ร้านนี้คุยง่าย แนะนำค่า ❤️❤️❤️❤️❤️',
-        author: 'Pimjira Suksao',
-        role: 'Facebook',
-        avatarSrc: testimonial2.src,
-        avatarAlt: 'Pimjira Suksao portrait',
-      },
-      {
-        content:
-          'ขอบคุณทีมงานโฟโต้บูธมากๆนะคะ งานดูมีสีสันขึ้นมากเลย พร็อพถ่ายรูปมีให้เลือกเล่นเยอะแยะมากมาย แขกในงานสนุกสนานกันทุกคน ทีมงานบริการดี ดูแลดี เชิญแขกถ่ายรูปให้ตลอด ดูแลแบบมืออาชีพจริงๆค่ะ ไว้มีโอกาสอื่นๆจะมาใช้บริการใหม่นะคะ',
-        author: 'Chartparamee Chaiyadej',
-        role: 'Google',
-        avatarSrc: testimonial3.src,
-        avatarAlt: 'Chartparamee Chaiyadej portrait',
-      },
-    ]}
-  />
-
-  <PricingSection pricing={pricing} />
-
-  <section class="mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
-    <div class="mx-auto mb-8 max-w-3xl text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-neutral-800 md:text-5xl">
-        Video Presentation
-      </h2>
-      <p class="mt-4 text-lg text-neutral-600">
-        ดูตัวอย่างการใช้งาน PhotoBooth ของเราผ่านวิดีโอด้านล่าง
-      </p>
-    </div>
-
-    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-sm">
-      <div class="aspect-video w-full">
-        <iframe
-          class="h-full w-full"
-          src="https://www.youtube.com/embed/yDJkXs_KJ8o"
-          title="PhotoBooth video presentation"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
+        backdropImages.map((image) => (
+          <div class="overflow-hidden border border-neutral-200 bg-white">
+            <button
+              type="button"
+              class="block h-full w-full cursor-zoom-in"
+              data-lightbox-src={image.src}
+              data-lightbox-alt={image.alt}
+              aria-label={`Open ${image.alt} in full size`}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+            </button>
+          </div>
+        ))
+      }
     </div>
   </section>
+
+  <div
+    id="backdrop-lightbox"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded backdrop image"
+  >
+    <button
+      type="button"
+      id="backdrop-lightbox-close"
+      class="absolute right-4 top-4 border border-white/60 px-3 py-1 text-sm text-white"
+      aria-label="Close image preview"
+    >
+      Close
+    </button>
+    <img
+      id="backdrop-lightbox-image"
+      src=""
+      alt=""
+      class="max-h-[92vh] max-w-[95vw] object-contain"
+    />
+  </div>
+
+  <script>
+    (() => {
+      const overlay = document.querySelector<HTMLElement>('#backdrop-lightbox');
+      const lightboxImage =
+        document.querySelector<HTMLImageElement>('#backdrop-lightbox-image');
+      const closeButton = document.querySelector<HTMLElement>('#backdrop-lightbox-close');
+      const triggers = document.querySelectorAll<HTMLElement>('[data-lightbox-src]');
+
+      if (!overlay || !lightboxImage || !closeButton || triggers.length === 0) {
+        return;
+      }
+
+      const openLightbox = (src: string, alt: string) => {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeLightbox = () => {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+          const src = trigger.getAttribute('data-lightbox-src');
+          const alt = trigger.getAttribute('data-lightbox-alt') || 'Backdrop image';
+          if (!src) return;
+          openLightbox(src, alt);
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+
+      overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !overlay.classList.contains('hidden')) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 </MainLayout>
