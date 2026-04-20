@@ -7,7 +7,7 @@
 
   "starterKit": {
     "name": "2 ชั่วโมง",
-    "description": "Best option for DIY projects",
+    "description": "Best for beginners",
     "price": "3,900",
     "cents": ".00",
     "billingFrequency": "บาท",
@@ -23,7 +23,7 @@
 
   "professionalToolbox": {
     "name": "3 ชั่วโมง",
-    "description": "Best for large scale uses",
+    "description": "Best for large scale",
     "price": "4,900",
     "cents": ".00",
     "billingFrequency": "บาท",
@@ -39,7 +39,7 @@
 
   "premiumStudio": {
     "name": "4 ชั่วโมง",
-    "description": "Best for full-service event teams",
+    "description": "Best for full-service event",
     "price": "5,900",
     "cents": ".00",
     "billingFrequency": "บาท",
