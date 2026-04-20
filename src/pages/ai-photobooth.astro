@@ -7,14 +7,15 @@ import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro
 import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
 
 import heroImage from '@images/hero-image.webp';
-import features from '@data/features/ai-photobooth.json';
-import pricing from '@data/pricing/ai-photobooth.json';
+import features from '@data/features/home.json';
+import pricing from '@data/pricing/home.json';
 import featureImage from '@images/features-image.webp';
-import construction from '@images/construction-image.avif';
-import tools from '@images/automated-tools.avif';
-import dashboard from '@images/dashboard-image.avif';
+import features1 from '@images/photobooth-features1.webp';
+import features2 from '@images/photobooth-features2.webp';
+import features3 from '@images/photobooth-features3.webp';
 import testimonial1 from '@images/testimonials/1.webp';
 import testimonial2 from '@images/testimonials/2.webp';
 import testimonial3 from '@images/testimonials/3.webp';
@@ -57,9 +58,15 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     inLanguage: 'th-TH',
   }}
 >
+  <AnnouncementBanner
+    btnId="dismiss-button"
+    btnTitle="ส่วนลด 10% ทุกแพ็กเกจ"
+    url="https://m.me/snapafoto" 
+  />
+
   <HeroSection
-    title=`AI Photobooth <span class="text-yellow-500">เปลี่ยนหน้า สนุกได้ทันที</span>`
-    subTitle="เทคโนโลยี AI สลับหน้าอัตโนมัติ ได้ภาพสุดฮาที่ต้องแชร์ทุกงาน"
+    title=`โฟโต้บูธ ตู้ถ่ายรูป <span class="text-yellow-500">งานแต่ง และอีเว้นท์</span>`
+    subTitle="ตอบโจทย์ทุกการใช้งาน ทั้งเรื่องพื้นที่ ราคา และฟังก์ชัน"
     primaryBtn="จองคิว"
     primaryBtnURL="/contact"
     secondaryBtn="บริการทั้งหมด"
@@ -70,7 +77,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     starCount={4}
     reviews=`From Over <span class="font-bold">1k+</span> Reviews`
     src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    alt="SNAP a FOTO โฟโต้บูธสำหรับงานแต่งงานและอีเว้นท์"
   />
 
   <ClientsSection
@@ -83,7 +90,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     title="ตอบโจทย์ทุกงานอีเวนต์ของคุณ"
     subTitle="ที่ PhotoBooth ของเรา เราเข้าใจความต้องการที่หลากหลายของงานอีเวนต์ ไม่ว่าจะเป็นงานแต่ง งานบริษัท หรืองานปาร์ตี้ เราพร้อมมอบทั้งอุปกรณ์ทันสมัยและบริการแบบมืออาชีพ เพื่อให้ทุกช่วงเวลาของคุณเต็มไปด้วยความสนุกและความทรงจำที่น่าประทับใจ"
     src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    alt="SNAP a FOTO บริการโฟโต้บูธครบวงจร"
     features={features}
   />
 
@@ -95,7 +102,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
         content:
           'กล้องคุณภาพสูง พร้อมชุดไฟสตูดิโอและฉากหลัง จัดเต็มทุกองค์ประกอบ ให้ภาพออกมาสวย คม ชัด ทุกช็อต',
         svg: 'tools',
-        src: tools,
+        src: features1,
         alt: 'อุปกรณ์กล้องและไฟสตูดิโอสำหรับโฟโต้บูธ',
         first: true,
       },
@@ -104,7 +111,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
         content:
           'ไม่ต้องมีประสบการณ์ก็ถ่ายได้ ระบบใช้งานง่าย พร้อมหน้าจอพรีวิว เห็นภาพทันทีก่อนกดถ่าย สนุกได้ทั้งงาน',
         svg: 'dashboard',
-        src: dashboard,
+        src: features2,
         alt: 'หน้าจอพรีวิวโฟโต้บูธใช้งานง่าย',
         second: true,
       },
@@ -113,7 +120,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
         content:
           'ทั้งพิมพ์ภาพทันที เลือกกรอบรูปได้ และแชร์ผ่าน QR Code ให้แขกในงานได้รูปกลับไปเป็นความทรงจำทันที',
         svg: 'house',
-        src: construction,
+        src: features3,
         alt: 'ตัวอย่างฟีเจอร์การใช้งานโฟโต้บูธในงานจริง',
       },
     ]}
