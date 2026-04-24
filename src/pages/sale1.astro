@@ -1,0 +1,295 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import features1 from '../images/photobooth-features1.webp';
+import features2 from '../images/photobooth-features2.webp';
+import features3 from '../images/photobooth-features3.webp';
+import { SITE } from '../data_files/constants';
+import guestBookPricing from '../data_files/pricing/guestbook.json';
+
+const pageTitle: string = `โปรโมชันโฟโต้บูธ | ${SITE.title}`;
+const metaDescription =
+  'Sale Page โฟโต้บูธจาก SNAP a FOTO พร้อมโปรโมชันพิเศษสำหรับงานแต่ง งานบริษัท และอีเวนต์ ถ่ายไม่อั้น ปริ้นไม่อั้น พร้อมทีมงานดูแลครบหน้างาน';
+const ogTitle = `Sale Page โฟโต้บูธ | ${SITE.title}`;
+
+const highlights = [
+  'ถ่ายไม่อั้นตลอดงาน พร้อมพร็อพครบชุด',
+  'แขกได้ไฟล์ปริ้น ไฟล์รูปเดี่ยว ไฟล์ดุ๊กดิ๊ก',
+  'ไฟล์ดิจิทัลรับกลับทันทีผ่าน QR Code',
+  'ทีมงานติดตั้งและดูแลหน้างานเต็มเวลา',
+];
+
+const formatBaht = (price: string) => `${price} บาท`;
+
+const guestBookFullPrices = {
+  starter: formatBaht(guestBookPricing.starterKit.price),
+  plus: formatBaht(guestBookPricing.professionalToolbox.price),
+  max: formatBaht(guestBookPricing.premiumStudio.price),
+};
+
+const comboPackages = [
+  {
+    name: 'Duo Starter',
+    badge: 'แนะนำ',
+    detail: 'เหมาะกับงานขนาดเล็กถึงกลาง แขก 60-150 คน',
+    photoBooth: 'Photobooth 2 ชั่วโมง',
+    photoBoothPrice: '8,900 บาท',
+    guestBook: 'Video Guest Book',
+    guestBookFullPrice: guestBookFullPrices.starter,
+    guestBookDiscountPrice: '1,500 บาท',
+    totalPrice: '10,400 บาท',
+  },
+  {
+    name: 'Duo Plus',
+    badge: 'คุ้มค่า',
+    detail: 'เหมาะกับงานแต่งและงานบริษัทที่ต้องการความต่อเนื่อง',
+    photoBooth: 'Photobooth 3 ชั่วโมง',
+    photoBoothPrice: '10,900 บาท',
+    guestBook: 'Video Guest Book',
+    guestBookFullPrice: guestBookFullPrices.plus,
+    guestBookDiscountPrice: '1,500 บาท',
+    totalPrice: '12,400 บาท',
+  },
+  {
+    name: 'Duo Max',
+    badge: 'งานใหญ่',
+    detail: 'สำหรับงานใหญ่ แขกเยอะ และต้องการเก็บทุกโมเมนต์',
+    photoBooth: 'Photobooth 4 ชั่วโมง',
+    photoBoothPrice: '12,900 บาท',
+    guestBook: 'Video Guest Book',
+    guestBookFullPrice: guestBookFullPrices.max,
+    guestBookDiscountPrice: '1,500 บาท',
+    totalPrice: '14,400 บาท',
+  },
+];
+
+const videoShowcase = [
+  {
+    title: 'Photobooth Showcase 1',
+    embedUrl: 'https://www.youtube.com/embed/mMBX6hi63bA',
+  },
+  {
+    title: 'Photobooth Showcase 2',
+    embedUrl: 'https://www.youtube.com/embed/aE0VAJwNdd4',
+  },
+  {
+    title: 'Video Guest Book Showcase',
+    embedUrl: 'https://www.youtube.com/embed/BcUxK9W82t4',
+  },
+];
+
+const faqItems = [
+  {
+    q: 'ต้องจองล่วงหน้านานแค่ไหน?',
+    a: 'แนะนำ 2-4 สัปดาห์เพื่อให้ล็อกคิวได้แน่นอน โดยเฉพาะวันศุกร์-อาทิตย์',
+  },
+  {
+    q: 'ปรับกรอบรูปให้เข้าธีมงานได้ไหม?',
+    a: 'ได้ ทีมออกแบบช่วยปรับกรอบรูป สี และข้อความให้เข้าธีมงานของคุณ',
+  },
+  {
+    q: 'หน้างานต้องเตรียมอะไรบ้าง?',
+    a: 'เพียงพื้นที่วางบูธและปลั๊กไฟมาตรฐาน ทีมงานเราดูแลที่เหลือทั้งหมด',
+  },
+];
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  hideNavbar={true}
+  hideFooter={true}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/sale1`,
+    url: `${SITE.url}/sale1`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'th-TH',
+  }}
+>
+  <section class="relative overflow-hidden rounded-3xl border border-orange-200 bg-linear-to-br from-amber-50 via-orange-50 to-rose-50 px-6 py-12 shadow-sm sm:px-10 lg:px-14 lg:py-16">
+    <div class="pointer-events-none absolute -top-24 -right-12 h-64 w-64 rounded-full bg-orange-300/35 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-20 -left-16 h-64 w-64 rounded-full bg-yellow-300/35 blur-3xl"></div>
+
+    <div class="relative">
+      <p class="inline-flex items-center rounded-full border border-orange-300 bg-white/80 px-4 py-1.5 text-xs font-extrabold tracking-wider text-orange-700">
+        แพ็กเกจขายดีสำหรับงานแต่งและงานอีเวนต์
+      </p>
+
+      <h1 class="mt-5 text-3xl font-extrabold leading-tight text-neutral-900 sm:text-4xl lg:text-5xl">
+        โปรโฟโต้บูธสุดคุ้ม
+        <span class="block text-orange-600">ถ่ายไม่อั้น ปริ้นไม่อั้น</span>
+        พร้อมทีมงานดูแลหน้างาน
+      </h1>
+
+      <p class="mt-4 max-w-3xl text-sm font-medium text-neutral-700 sm:text-base">
+        ออกแบบมาเพื่อให้แขกสนุก ถ่ายง่าย ได้ไฟล์ครบ และเจ้าภาพไม่ต้องกังวลเรื่องหน้างาน
+      </p>
+
+      <div class="mt-7 grid gap-3">
+        {highlights.map((item, idx) => (
+          <article class="flex items-start gap-3 rounded-2xl border border-orange-200 bg-white/85 px-4 py-3 shadow-xs backdrop-blur-sm">
+            <span class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500 text-xs font-extrabold text-white">
+              {idx + 1}
+            </span>
+            <p class="text-sm font-semibold leading-relaxed text-neutral-800 sm:text-base">{item}</p>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-0 py-14">
+    <div class="grid gap-5 pb-14">
+      <figure class="overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100">
+        <div class="aspect-video w-full">
+          <img src={features1.src} alt="อุปกรณ์โฟโต้บูธพร้อมใช้งาน" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+      </figure>
+      <figure class="overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100">
+        <div class="aspect-video w-full">
+          <img src={features2.src} alt="หน้าจอพรีวิวโฟโต้บูธ" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+      </figure>
+      <figure class="overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100">
+        <div class="aspect-video w-full">
+          <img src={features3.src} alt="ตัวอย่างภาพพิมพ์จากโฟโต้บูธ" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+      </figure>
+    </div>
+
+    <div class="mb-8 text-center">
+      <h2 class="text-3xl font-bold text-neutral-800 sm:text-4xl">แพ็กเกจคู่แนะนำ</h2>
+      <p class="mt-3 text-neutral-600">จับคู่ Photobooth + Video Guest Book แบบเห็นราคาแยกชัดเจน พร้อมราคารวมในแพ็กเดียว</p>
+    </div>
+
+    <div class="grid gap-5">
+      {comboPackages.map((pkg, idx) => (
+        <article class={`rounded-2xl border p-6 shadow-sm ${idx === 0 ? 'border-orange-400 bg-linear-to-br from-orange-50 to-yellow-50' : 'border-neutral-300 bg-neutral-100'}`}>
+          <div class="mb-4 flex items-center justify-between gap-3">
+            <p class="text-lg font-extrabold tracking-tight text-neutral-800">{pkg.name}</p>
+            <span class={`rounded-full px-3 py-1 text-xs font-bold ${idx === 0 ? 'bg-orange-500 text-white' : 'bg-neutral-200 text-neutral-700'}`}>
+              {pkg.badge}
+            </span>
+          </div>
+
+          <p class="mb-4 text-sm text-neutral-600">{pkg.detail}</p>
+
+          <div class="space-y-3 rounded-xl border border-neutral-300 bg-white/90 p-4">
+            <div class="flex items-center justify-between gap-3">
+              <p class="text-sm font-semibold text-neutral-700">{pkg.photoBooth}</p>
+              <p class="text-sm font-bold text-neutral-800">{pkg.photoBoothPrice}</p>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <p class="text-sm font-semibold text-neutral-700">{pkg.guestBook}</p>
+              <div class="text-right">
+                <p class="text-xs font-medium text-neutral-500 line-through">{pkg.guestBookFullPrice}</p>
+                <p class="text-sm font-bold text-orange-600">{pkg.guestBookDiscountPrice}</p>
+              </div>
+            </div>
+            <div class="h-px w-full bg-neutral-300"></div>
+            <div class="flex items-center justify-between gap-3">
+              <p class="text-base font-extrabold text-neutral-800">ราคารวมแพ็กคู่</p>
+              <p class="text-2xl font-black text-orange-600">{pkg.totalPrice}</p>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs font-medium text-neutral-500">ราคานี้เป็นราคาเริ่มต้น สามารถปรับตามสถานที่และรายละเอียดงานได้</p>
+
+          <a
+            href="/contact"
+            class="mt-5 inline-flex rounded-lg border border-transparent bg-orange-400 px-4 py-2 text-sm font-bold text-white transition hover:bg-orange-500"
+          >
+            ขอแพ็กเกจนี้
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-0 pb-14">
+    <div class="mb-8 text-center">
+      <h2 class="text-3xl font-bold text-neutral-800 sm:text-4xl">วิดีโอตัวอย่างหน้างานจริง</h2>
+      <p class="mt-3 text-neutral-600">ดูตัวอย่างบรรยากาศการใช้งาน Photobooth และ Video Guest Book ก่อนตัดสินใจ</p>
+    </div>
+
+    <div class="grid gap-5">
+      {videoShowcase.map(video => (
+        <div class="overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-sm">
+          <div class="aspect-video w-full">
+            <iframe
+              class="h-full w-full"
+              src={video.embedUrl}
+              title={video.title}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto mb-16 max-w-4xl rounded-3xl border border-orange-200 bg-linear-to-br from-orange-50 via-yellow-50 to-white px-6 py-8 shadow-sm sm:px-8">
+    <div class="mb-6">
+      <p class="text-xs font-bold tracking-wider text-orange-600">FAQ</p>
+      <h2 class="mt-1 text-2xl font-extrabold text-neutral-800 sm:text-3xl">คำถามที่พบบ่อย</h2>
+      <p class="mt-2 text-sm text-neutral-600">รวมคำถามที่ลูกค้าถามบ่อยก่อนจองคิว เพื่อให้ตัดสินใจได้เร็วขึ้น</p>
+    </div>
+
+    <div class="space-y-3">
+      {faqItems.map((item, idx) => (
+        <details class="faq-item group rounded-2xl border border-orange-200/70 bg-white/90 p-4 transition hover:border-orange-300 hover:shadow-sm">
+          <summary class="faq-summary flex cursor-pointer list-none items-center justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-xs font-bold text-orange-700">
+                {idx + 1}
+              </span>
+              <span class="font-semibold text-neutral-800">{item.q}</span>
+            </div>
+            <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-orange-300 bg-orange-50 text-lg font-bold leading-none text-orange-600 transition-transform duration-300">
+              +
+            </span>
+          </summary>
+          <p class="pt-3 pl-9 text-sm leading-relaxed text-neutral-600">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <div class="h-24"></div>
+
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-orange-200 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm">
+    <div class="mx-auto max-w-6xl">
+      <a
+        href={guestBookPricing.starterKit.purchaseLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex w-full items-center justify-center rounded-xl border border-transparent bg-orange-500 px-4 py-3 text-base font-extrabold text-white transition hover:bg-orange-600"
+      >
+        จองคิว
+      </a>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+</style>
