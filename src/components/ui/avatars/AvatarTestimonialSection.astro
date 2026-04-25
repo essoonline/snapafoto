@@ -13,15 +13,14 @@ interface Props {
 <div class="shrink-0">
   {
     typeof src === 'string' ? (
-      <Image
+      <img
         class="size-8 rounded-full sm:h-[2.875rem] sm:w-[2.875rem]"
         src={src}
         alt={alt}
-        inferSize
         loading="lazy"
-        widths={[32, 46, 64]}
-        sizes="(max-width: 640px) 32px, 46px"
-        format="webp"
+        decoding="async"
+        width="46"
+        height="46"
       />
     ) : (
       <Image

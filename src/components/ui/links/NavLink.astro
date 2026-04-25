@@ -40,13 +40,8 @@ If URL is '/' (home page), assign ID as 'home'
     let nav = document.getElementById(navId);
 
     if (nav) {
-      nav.classList.remove(
-        'text-neutral-600',
-        '',
-        'hover:text-neutral-500',
-        ''
-      );
-      nav.classList.add('text-orange-400', '');
+      nav.classList.remove('text-neutral-600', 'hover:text-neutral-500');
+      nav.classList.add('text-orange-400');
       nav.setAttribute('aria-current', 'page');
     }
   });
