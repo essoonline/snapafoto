@@ -44,25 +44,25 @@ export const OG = {
 
 export const partnersData = [
   {
-    imageSrc: client10.src,
+    imageSrc: client10,
     alt: 'OTANI logo',
     name: 'OTANI',
     href: '#',
   },
   {
-    imageSrc: client3.src,
+    imageSrc: client3,
     alt: 'Tiger logo',
     name: 'Tiger',
     href: '#',
   },
   {
-    imageSrc: client6.src,
+    imageSrc: client6,
     alt: 'SCG logo',
     name: 'SCG',
     href: '#',
   },
   {
-    imageSrc: client8.src,
+    imageSrc: client8,
     alt: 'Lays logo',
     name: 'Lays',
     href: '#',

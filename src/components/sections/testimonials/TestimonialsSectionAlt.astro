@@ -1,6 +1,7 @@
 ---
 // Import AvatarTestimonialSection component for use in this module
 import AvatarTestimonialSection from '../../ui/avatars/AvatarTestimonialSection.astro';
+import type { ImageMetadata } from 'astro';
 
 // Define props from Astro
 const { title, testimonials } = Astro.props;
@@ -10,7 +11,7 @@ interface Testimonial {
   content: string;
   author: string;
   role: string;
-  avatarSrc: string;
+  avatarSrc: string | ImageMetadata;
   avatarAlt: string;
 }
 

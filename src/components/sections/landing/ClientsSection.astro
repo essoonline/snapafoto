@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 // Define props from Astro
 const { title, subTitle, partners } = Astro.props;
 
 interface Partner {
   icon?: any;
-  imageSrc?: string;
+  imageSrc?: ImageMetadata;
   alt?: string;
   name?: string;
   href?: string;
@@ -43,12 +46,15 @@ interface Props {
     {
       partners.map(partner => (
         partner.imageSrc ? (
-          <img
+          <Image
             src={partner.imageSrc}
             alt={partner.alt ?? `${partner.name ?? 'Partner'} logo`}
             class="mx-auto h-auto w-16 py-3 sm:mx-0 sm:w-24 md:w-32 lg:w-40 lg:py-5"
             loading="lazy"
             decoding="async"
+            widths={[64, 96, 128, 160]}
+            sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
+            format="webp"
           />
         ) : (
           <div set:html={partner.icon} />

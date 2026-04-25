@@ -104,7 +104,10 @@ interface Props {
             class="h-full w-full scale-110 object-cover object-center"
             draggable={'false'}
             loading={'eager'}
+            fetchpriority={'high'}
             format={'avif'}
+            widths={[360, 480, 640, 768, 960]}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 640px"
           />
         )
       }

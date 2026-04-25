@@ -22,6 +22,7 @@ const firstClass = first ? '' : 'hidden';
 const secondClass = second
   ? 'shadow-xl aspect-video object-contain bg-neutral-300 p-3 lg:object-cover lg:aspect-square shadow-neutral-200 rounded-xl'
   : 'shadow-xl aspect-video object-cover lg:aspect-square shadow-neutral-200 rounded-xl';
+const loadingMode = first ? 'eager' : 'lazy';
 
 /*
 first: This property should be set to true for the initial TabContent component
@@ -49,6 +50,8 @@ This is the full example:
     class={secondClass}
     draggable={'false'}
     format={'avif'}
-    loading={'eager'}
+    loading={loadingMode}
+    widths={[320, 480, 640, 768]}
+    sizes="(max-width: 1024px) 100vw, 483px"
   />
 </div>

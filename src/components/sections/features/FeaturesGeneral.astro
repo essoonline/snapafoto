@@ -35,6 +35,8 @@ const { title, subTitle, src, alt, features } = Astro.props;
           draggable={'false'}
           format={'avif'}
           loading={'eager'}
+          widths={[768, 1024, 1280, 1440]}
+          sizes="(max-width: 1536px) 100vw, 1440px"
         />
       )
     }

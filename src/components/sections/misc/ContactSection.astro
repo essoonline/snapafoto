@@ -2,6 +2,7 @@
 import ReviewComponent from '@components/ui/blocks/ReviewComponent.astro';
 import SecondaryCTA from '@components/ui/buttons/SecondaryCTA.astro';
 import { partnersData } from '@/data_files/constants';
+import { Image } from 'astro:assets';
 import testimonial4 from '@images/testimonials/4.webp';
 import testimonial5 from '@images/testimonials/5.webp';
 import testimonial6 from '@images/testimonials/6.webp';
@@ -158,12 +159,15 @@ const avatarSrcs = [
           >
             {
               partnersData.map((partner) => (
-                <img
+                <Image
                   src={partner.imageSrc}
                   alt={partner.alt ?? `${partner.name ?? 'Partner'} logo`}
                   class="mx-auto h-auto w-16 py-3 sm:mx-0 sm:w-24 md:w-32 lg:w-40 lg:py-5"
                   loading="lazy"
                   decoding="async"
+                  widths={[64, 96, 128, 160]}
+                  sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, (max-width: 1024px) 128px, 160px"
+                  format="webp"
                 />
               ))
             }
