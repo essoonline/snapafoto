@@ -7,7 +7,6 @@ import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro
 import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
-import AnnouncementBanner from '@components/ui/banners/AnnouncementBanner.astro';
 
 import heroImage from '@images/hero-image.webp';
 import features from '@data/features/home.json';
@@ -58,12 +57,6 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     inLanguage: 'th-TH',
   }}
 >
-  <AnnouncementBanner
-    btnId="dismiss-button"
-    btnTitle="ส่วนลด 10% ทุกแพ็กเกจ"
-    url="https://m.me/snapafoto" 
-  />
-
   <HeroSection
     title=`โฟโต้บูธ ตู้ถ่ายรูป <span class="text-yellow-500">งานแต่ง และอีเว้นท์</span>`
     subTitle="ตอบโจทย์ทุกการใช้งาน ทั้งเรื่องพื้นที่ ราคา และฟังก์ชัน"
