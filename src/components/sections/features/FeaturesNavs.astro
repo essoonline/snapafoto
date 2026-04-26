@@ -27,6 +27,7 @@ interface Props {
 
 <section
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  data-feature-tabs
 >
   <div class="relative p-6 md:p-16">
     <div
@@ -95,3 +96,51 @@ interface Props {
     </div>
   </div>
 </section>
+
+<script>
+  const initFeatureTabs = () => {
+    document.querySelectorAll('[data-feature-tabs]').forEach((section) => {
+      const tabList = section.querySelector('nav[role="tablist"]');
+      if (!tabList) return;
+
+      const tabButtons = Array.from(
+        tabList.querySelectorAll('[role="tab"][data-hs-tab]')
+      );
+      if (!tabButtons.length) return;
+
+      const activateTab = (button: HTMLElement) => {
+        const selector = button.getAttribute('data-hs-tab');
+        if (!selector) return;
+
+        const targetPanel = section.querySelector(selector);
+        if (!targetPanel) return;
+
+        tabButtons.forEach((btn) => {
+          const panelSelector = btn.getAttribute('data-hs-tab');
+          const panel = panelSelector ? section.querySelector(panelSelector) : null;
+          const isActive = btn === button;
+
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          btn.setAttribute('tabindex', isActive ? '0' : '-1');
+
+          if (panel) panel.classList.toggle('hidden', !isActive);
+        });
+      };
+
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => activateTab(button as HTMLElement));
+      });
+
+      const initial =
+        tabButtons.find((btn) => btn.classList.contains('active')) || tabButtons[0];
+      activateTab(initial as HTMLElement);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFeatureTabs, { once: true });
+  } else {
+    initFeatureTabs();
+  }
+</script>

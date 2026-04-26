@@ -35,7 +35,7 @@ interface Props {
 }
 ---
 
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html lang={lang} class="scrollbar-hide scroll-pt-16">
   <head>
     {/* Adding metadata to the HTML document */}
     <Meta
@@ -47,7 +47,35 @@ interface Props {
     {/* Define the title of the page */}
     <title>{title}</title>
     <script>
-      import '@scripts/lenisSmoothScroll.js';
+      type RequestIdleCallbackFn = (
+        callback: () => void,
+        options?: { timeout: number }
+      ) => number;
+
+      const requestIdle = (window as Window & {
+        requestIdleCallback?: RequestIdleCallbackFn;
+      }).requestIdleCallback;
+
+      const shouldEnableLenis = () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+          return false;
+        return window.matchMedia('(min-width: 1024px)').matches;
+      };
+
+      const loadLenis = async () => {
+        if (!shouldEnableLenis()) return;
+        await import('@scripts/lenisSmoothScroll.js');
+      };
+
+      if (typeof requestIdle === 'function') {
+        requestIdle(() => {
+          void loadLenis();
+        }, { timeout: 1500 });
+      } else {
+        setTimeout(() => {
+          void loadLenis();
+        }, 0);
+      }
     </script>
   </head>
   <body
@@ -81,15 +109,60 @@ interface Props {
       )
     }
     <script>
-      // https://preline.co
-      import 'preline';
-      const init = () =>
-        (
-          window as Window & { HSStaticMethods?: { autoInit?: () => void } }
-        ).HSStaticMethods?.autoInit?.();
-      if (document.readyState === 'loading')
-        document.addEventListener('DOMContentLoaded', init);
-      else init();
+      type RequestIdleCallbackFn = (
+        callback: () => void,
+        options?: { timeout: number }
+      ) => number;
+
+      const requestIdle = (window as Window & {
+        requestIdleCallback?: RequestIdleCallbackFn;
+      }).requestIdleCallback;
+
+      let prelinePromise: Promise<void> | null = null;
+
+      const hasPrelineTargets = () =>
+        Boolean(
+          document.querySelector(
+            '.hs-collapse-toggle:not(.--prevent-on-load-init), .hs-dropdown:not(.--prevent-on-load-init), .hs-accordion:not(.--prevent-on-load-init), [role="tablist"]:not(select):not(.--prevent-on-load-init)'
+          )
+        );
+
+      const loadPreline = () => {
+        if (!hasPrelineTargets()) return Promise.resolve();
+
+        if (!prelinePromise) {
+          prelinePromise = import('@scripts/prelineLite.js')
+            .then(({ initPrelineLite }) => {
+              return initPrelineLite();
+            })
+            .catch(() => {
+              prelinePromise = null;
+            });
+        }
+        return prelinePromise;
+      };
+
+      const preloadPrelineOnInteraction = () => {
+        void loadPreline();
+      };
+
+      window.addEventListener('pointerdown', preloadPrelineOnInteraction, {
+        once: true,
+        passive: true,
+      });
+      window.addEventListener('keydown', preloadPrelineOnInteraction, {
+        once: true,
+      });
+
+      if (typeof requestIdle === 'function') {
+        requestIdle(() => {
+          void loadPreline();
+        }, { timeout: 1200 });
+      } else {
+        setTimeout(() => {
+          void loadPreline();
+        }, 0);
+      }
     </script>
     <style>
       /* CSS rules for the page scrollbar */
