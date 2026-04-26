@@ -39,6 +39,7 @@ const socialImageRes = await getImage({
   src: OG.image,
   width: 1200,
   height: 600,
+  format: 'webp',
 });
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
@@ -89,7 +90,7 @@ const appleTouchIcon = await getImage({
 <meta property="og:image" content={socialImage} />
 <meta content="1200" property="og:image:width" />
 <meta content="600" property="og:image:height" />
-<meta content="image/png" property="og:image:type" />
+<meta content="image/webp" property="og:image:type" />
 
 {/* Twitter Meta Tags */}
 <meta name="twitter:card" content="summary_large_image" />
