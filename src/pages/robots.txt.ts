@@ -20,6 +20,9 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+User-agent: anthropic-ai
+Disallow: /
+
 User-agent: Google-Extended
 Disallow: /
 
@@ -32,7 +35,13 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-User-agent: anthropic-ai
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: cohere-ai
 Disallow: /
 
 # Allow everything else (search crawlers, etc.)
