@@ -43,6 +43,95 @@ export const Icons = {
     height: 48,
     viewBox: '0 -960 960 960',
   },
+  camera: {
+    paths: [
+      {
+        d: 'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z',
+      },
+      {
+        d: 'M12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+      },
+    ],
+    class: 'h-6 w-6 shrink-0 text-neutral-700 hs-tab-active:text-orange-400 md:h-7 md:w-7',
+    width: 24,
+    height: 24,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    strokeWidth: '1.5',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    stroke: 'currentColor',
+  },
+  smile: {
+    paths: [
+      {
+        // วงกลมหน้า
+        d: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z',
+      },
+      {
+        // ปาก
+        d: 'M8 14s1.5 2 4 2 4-2 4-2',
+      },
+      {
+        // ตาซ้าย
+        d: 'M9 9h.01',
+      },
+      {
+        // ตาขวา
+        d: 'M15 9h.01',
+      },
+    ],
+    class: 'h-6 w-6 shrink-0 text-neutral-700 hs-tab-active:text-orange-400 md:h-7 md:w-7',
+    width: 24,
+    height: 24,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    strokeWidth: '1.5',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    stroke: 'currentColor',
+  },
+  printer: {
+    paths: [
+      {
+        // กล่องซ้ายบน
+        d: 'M3 3h7v7H3z',
+      },
+      {
+        // กล่องขวาบน
+        d: 'M14 3h7v7h-7z',
+      },
+      {
+        // กล่องซ้ายล่าง
+        d: 'M3 14h7v7H3z',
+      },
+      {
+        // จุดในกล่องซ้ายบน
+        d: 'M5 5h3v3H5z',
+      },
+      {
+        // จุดในกล่องขวาบน
+        d: 'M16 5h3v3h-3z',
+      },
+      {
+        // จุดในกล่องซ้ายล่าง
+        d: 'M5 16h3v3H5z',
+      },
+      {
+        // ลวดลาย QR ขวาล่าง
+        d: 'M14 14h3v3h-3zm4 0h3v3h-3zm-4 4h3v3h-3zm4-2h3m-3 4h3',
+      },
+    ],
+    class: 'h-6 w-6 shrink-0 text-neutral-700 hs-tab-active:text-orange-400 md:h-7 md:w-7',
+    width: 24,
+    height: 24,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    strokeWidth: '1.5',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    stroke: 'currentColor',
+  },
   tools: {
     paths: [
       {

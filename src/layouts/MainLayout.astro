@@ -90,13 +90,7 @@ interface Props {
     <div
       class="mx-auto w-full max-w-(--breakpoint-2xl) grow px-4 sm:px-6 lg:px-8"
     >
-      {
-        !hideNavbar && (
-          <div class={hideNavOnMobile ? 'hidden md:block' : ''}>
-            <Navbar />
-          </div>
-        )
-      }
+      <Navbar />
       <main>
         <slot />
       </main>
