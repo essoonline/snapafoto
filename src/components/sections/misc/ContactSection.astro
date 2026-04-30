@@ -28,7 +28,12 @@ const avatarSrcs = [
         {title}
       </h1>
       <div class="flex justify-center">
-        <img src="/images/reviews.svg" alt="รีวิวลูกค้า" class="h-32 w-auto" loading="lazy" />
+        <ReviewComponent
+          avatars={avatarSrcs}
+          rating={`<span class="font-bold">4.9</span> / 5`}
+          starCount={4}
+          reviews={`From Over <span class="font-bold">1k+</span> Reviews`}
+        />
       </div>
     </div>
 
@@ -66,7 +71,7 @@ const avatarSrcs = [
         <div class="pt-10 lg:pt-14">
           <div class="mx-auto mb-6 w-full space-y-1 text-center sm:w-1/2 lg:w-1/3">
             <h2 class="text-2xl leading-tight font-bold text-balance text-neutral-800 sm:text-3xl">
-              การติดต่อ
+              Contact us
             </h2>
           </div>
 
