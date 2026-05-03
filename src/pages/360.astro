@@ -268,16 +268,30 @@ const ogTitle = '360 Photo Booth | SNAP a FOTO';
     </div>
 
     <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-sm">
-      <div class="aspect-video w-full">
-        <iframe
-          class="h-full w-full"
-          src="https://www.youtube-nocookie.com/embed/VO-VDh-M7z0"
-          title="PhotoBooth video presentation"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+      <div class="aspect-video w-full relative" id="video-cover-container-360">
+        <script type="text/javascript">
+          function loadVideo360() {
+            const container = document.getElementById('video-cover-container-360');
+            container.innerHTML = `<iframe
+              class='h-full w-full'
+              src='https://www.youtube-nocookie.com/embed/VO-VDh-M7z0?autoplay=1'
+              title='PhotoBooth video presentation'
+              loading='lazy'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              referrerpolicy='strict-origin-when-cross-origin'
+              allowfullscreen
+            ></iframe>`;
+          }
+        </script>
+        <button type="button" onclick="loadVideo360()" class="absolute inset-0 w-full h-full focus:outline-none group">
+          <img src="https://img.youtube.com/vi/VO-VDh-M7z0/maxresdefault.jpg" alt="PhotoBooth 360 video cover" class="h-full w-full object-cover rounded-2xl border-0" loading="lazy" />
+          <span class="absolute inset-0 flex items-center justify-center">
+            <svg class="w-20 h-20 text-white/80 group-hover:text-yellow-400 transition" fill="currentColor" viewBox="0 0 84 84">
+              <circle cx="42" cy="42" r="42" fill="black" fill-opacity="0.5"/>
+              <polygon points="34,28 62,42 34,56" fill="white"/>
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
   </section>
