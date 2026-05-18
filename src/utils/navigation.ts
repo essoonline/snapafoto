@@ -4,7 +4,7 @@ const navBarLinks = [
   //{ name: 'ตู้สติกเกอร์', url: '/sticker-booth' },
   { name: '360 องศา', url: '/360' },
   { name: 'วีดีโออวยพร', url: '/guestbook' },
-  //{ name: 'AI Photobooth', url: '/ai-photobooth' },
+  { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
   //{ name: 'ฉากหลัง', url: '/backdrop' },
   //{ name: 'Services', url: '/services' },
   { name: 'ติดต่อเรา', url: '/contact' },
@@ -15,6 +15,7 @@ const footerLinks = [
     section: 'Our Services',
     links: [
       { name: 'โฟโต้บูธ', url: '/' },
+      { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
       { name: '360 องศา', url: '/360' },
       { name: 'วีดีโออวยพร', url: '/guestbook' },
     ],
