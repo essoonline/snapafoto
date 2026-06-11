@@ -2,7 +2,8 @@
 //Import relevant dependencies
 import NavLink from '@components/ui/links/NavLink.astro';
 import MegaMenuLink from '@components/ui/links/MegaMenuLink.astro';
-import enStrings from '@utils/navigation.ts';
+import ProductDropdown from '@components/ui/links/ProductDropdown.astro';
+import enStrings, { productNavLabel } from '@utils/navigation.ts';
 import BrandLogo from '@components/BrandLogo.astro';
 
 const strings = enStrings;
@@ -79,14 +80,14 @@ const homeUrl = '/';
       >
         {/* Navigation links */}
         {
-          strings.navBarLinks.map(link => {
+          strings.navBarLinks.map((link) => {
             if (link.name === 'Services') {
               return <MegaMenuLink />;
-            } else {
-              return <NavLink url={link.url} name={link.name} />;
             }
+            return <NavLink url={link.url} name={link.name} />;
           })
         }
+        <ProductDropdown label={productNavLabel} />
       </div>
     </div>
   </nav>

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const dir = path.join(__dirname, 'public/images/example');
+const dir = path.join(__dirname, 'src/images/example');
 const sizes = [305, 320, 480, 800];
 
 fs.readdirSync(dir)

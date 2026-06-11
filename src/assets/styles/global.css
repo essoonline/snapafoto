@@ -123,3 +123,12 @@
     cursor: pointer;
   }
 }
+
+@layer utilities {
+  .text-slider-accent {
+    background: linear-gradient(135deg, #5233ff 0%, #a855f7 40%, #ff3a82 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

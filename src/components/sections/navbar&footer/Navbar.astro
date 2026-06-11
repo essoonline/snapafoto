@@ -1,24 +1,22 @@
 ---
-//Import relevant dependencies
 import NavLink from '@components/ui/links/NavLink.astro';
-import enStrings from '@utils/navigation.ts';
+import ProductDropdown from '@components/ui/links/ProductDropdown.astro';
+import enStrings, { productNavLabel } from '@utils/navigation.ts';
 import BrandLogo from '@components/BrandLogo.astro';
 
 const strings = enStrings;
 const homeUrl = '/';
+const youtubeUrl = 'https://www.youtube.com/@snapafoto-xt1';
 ---
 
-{/* Main header component */}
 <header
   class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
 >
-  {/* Navigation container */}
   <nav
     class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md md:flex md:min-h-[73px] md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
-      {/* Brand logo */}
       <a
         class="flex-none rounded-lg text-xl font-bold ring-zinc-500 outline-hidden focus-visible:ring-3"
         href={homeUrl}
@@ -26,7 +24,6 @@ const homeUrl = '/';
       >
         <BrandLogo class="h-auto w-28" />
       </a>
-      {/* Collapse toggle for smaller screens */}
       <div class="mr-5 ml-auto md:hidden">
         <button
           type="button"
@@ -67,35 +64,33 @@ const homeUrl = '/';
         </button>
       </div>
     </div>
-    {/* Contains navigation links */}
+
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
+      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block md:overflow-visible"
     >
-      {/* Navigation links container */}
       <div
         class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:gap-y-0 md:ps-7 lg:gap-x-7"
       >
-        {/* Navigation links */}
         {strings.navBarLinks.map((link) => (
-          <NavLink
-            url={link.url}
-            name={link.name}
-          />
+          <NavLink url={link.url} name={link.name} />
         ))}
-        {/* YouTube Icon with left border */}
-        <a
-          href="https://www.youtube.com/@snapafoto-xt1"
-          target="_blank"
-          rel="noopener noreferrer"
-            class="flex items-center border-l border-neutral-300 pl-6 text-neutral-500 hover:text-red-600 transition-colors"
-          aria-label="YouTube"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-            <path d="M21.8 8.001s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C16.1 5 12 5 12 5h-.1s-4.1 0-7.1.1c-.4.1-1.2.1-1.9.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.1 6.9.1s4.1 0 7.1-.1c.4-.1 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM9.8 15.2V8.8l6.4 3.2-6.4 3.2z" />
-          </svg>
-        </a>
+        <div class="flex items-center gap-x-4 border-l border-neutral-300 pl-6 md:gap-x-5">
+          <ProductDropdown label={productNavLabel} />
+          <a
+            href={youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center text-neutral-500 transition-colors hover:text-red-600"
+            aria-label="YouTube"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+              <path d="M21.8 8.001s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C16.1 5 12 5 12 5h-.1s-4.1 0-7.1.1c-.4.1-1.2.1-1.9.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.1 6.9.1s4.1 0 7.1-.1c.4-.1 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM9.8 15.2V8.8l6.4 3.2-6.4 3.2z" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+

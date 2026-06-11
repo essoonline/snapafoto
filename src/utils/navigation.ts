@@ -1,29 +1,39 @@
+export const productLinks = [
+  { name: 'AI Faceswap', url: 'https://ai.snapafoto.com' },
+  { name: 'AI Photobooth', url: 'https://photobooth.snapafoto.com' },
+];
+
+export const productNavLabel = 'Product';
+
+export type NavBarLink = { name: string; url: string };
+
 // An array of links for navigation bar
-const navBarLinks = [
-  { name: 'โฟโต้บูธ', url: '/' },
+const navBarLinks: NavBarLink[] = [
+  { name: 'Photobooth', url: '/' },
   //{ name: 'ตู้สติกเกอร์', url: '/sticker-booth' },
-  { name: '360 องศา', url: '/360' },
-  { name: 'วีดีโออวยพร', url: '/guestbook' },
-  { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
+  { name: '360 VDO Booth', url: '/360' },
+  { name: 'Video Guestbook', url: '/guestbook' },
+  { name: 'AI Photobooth', url: '/ai-photobooth' },
   //{ name: 'ฉากหลัง', url: '/backdrop' },
   //{ name: 'Services', url: '/services' },
-  { name: 'ติดต่อเรา', url: '/contact' },
+  { name: 'Contact Us', url: '/contact' },
 ];
 // An array of links for footer
 const footerLinks = [
   {
     section: 'Our Services',
     links: [
-      { name: 'โฟโต้บูธ', url: '/' },
-      { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
-      { name: '360 องศา', url: '/360' },
-      { name: 'วีดีโออวยพร', url: '/guestbook' },
+      { name: 'Photobooth', url: '/' },
+      ...productLinks,
+      { name: '360 VDO Booth', url: '/360' },
+      { name: 'Video Guestbook', url: '/guestbook' },
+      { name: 'AI Photobooth', url: '/ai-photobooth' },
     ],
   },
   {
     section: 'Company',
     links: [
-      { name: 'Contact', url: '/contact' },
+      { name: 'Contact Us', url: '/contact' },
       {
         name: 'Reviews',
         url: 'https://www.facebook.com/snapafoto/reviews',

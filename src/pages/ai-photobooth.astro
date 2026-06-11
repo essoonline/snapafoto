@@ -7,10 +7,16 @@ import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro
 import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
+import PresentSlider from '@components/ui/PresentSlider.astro';
 
 import heroImage from '@images/hero-image.webp';
-import features from '@data/features/home.json';
-import pricing from '@data/pricing/home.json';
+import present1 from '@images/present/1.webp';
+import present2 from '@images/present/2.webp';
+import present3 from '@images/present/3.webp';
+import present4 from '@images/present/4.webp';
+import present5 from '@images/present/5.webp';
+import features from '@data/features/ai-photobooth.json';
+import pricing from '@data/pricing/ai-photobooth.json';
 import featureImage from '@images/features-image.webp';
 import features1 from '@images/photobooth-features1.webp';
 import features2 from '@images/photobooth-features2.webp';
@@ -33,8 +39,15 @@ const avatarSrcs = [
 
 const pageTitle: string = `AI Photobooth | ${SITE.title}`;
 const metaDescription =
-  'AI Photobooth จาก SNAP a FOTO เปลี่ยนลุค เปลี่ยนหน้า และสร้างภาพสนุกได้ทันที เหมาะสำหรับงานแต่ง งานอีเว้นท์ งานบริษัท และกิจกรรมเปิดตัวสินค้า';
+  'AI Photobooth จาก SNAP a FOTO — Touch To Start เลือกสไตล์ ถ่ายรูป AI Face Swap แชร์ผ่าน QR Code เลือกกรอบรูป พิมพ์ 4×6 เหมาะสำหรับงานแต่ง อีเว้นท์ และเปิดตัวสินค้า';
 const ogTitle = 'AI Photobooth | SNAP a FOTO';
+
+const presentImages = [present1, present2, present3, present4, present5].map(
+  (image, index) => ({
+    src: image.src,
+    alt: `AI Photobooth sample ${index + 1}`,
+  })
+);
 ---
 
 <MainLayout
@@ -57,9 +70,13 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     inLanguage: 'th-TH',
   }}
 >
+  <section class="mx-auto w-full max-w-[85rem] px-4 pt-6 pb-10 sm:px-6 lg:px-8 2xl:max-w-full">
+    <PresentSlider images={presentImages} />
+  </section>
+
   <HeroSection
-    title=`โฟโต้บูธ ตู้ถ่ายรูป <span class="text-yellow-500">งานแต่ง และอีเว้นท์</span>`
-    subTitle="ตอบโจทย์ทุกการใช้งาน ทั้งเรื่องพื้นที่ ราคา และฟังก์ชัน"
+    title=`AI Photobooth <span class="text-slider-accent">เปลี่ยนหน้า เปลี่ยนสไตล์ ในไม่กี่วินาที</span>`
+    subTitle="ระบบ Touch To Start สำหรับบูธงานอีเว้นท์ — เลือกประเภทภาพ เลือกสไตล์ AI ถ่ายรูป แล้วรับภาพพอร์ตเทรตพร้อม QR และปริ้นทันที"
     primaryBtn="จองคิว"
     primaryBtnURL="/contact"
     secondaryBtn="บริการทั้งหมด"
@@ -70,7 +87,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
     starCount={4}
     reviews=`From Over <span class="font-bold">1k+</span> Reviews`
     src={heroImage}
-    alt="SNAP a FOTO โฟโต้บูธสำหรับงานแต่งงานและอีเว้นท์"
+    alt="SNAP a FOTO AI Photobooth สำหรับงานอีเว้นท์"
   />
 
   <ClientsSection
@@ -80,40 +97,40 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
   />
 
   <FeaturesGeneral
-    title="ตอบโจทย์ทุกงานอีเวนต์ของคุณ"
-    subTitle="ที่ PhotoBooth ของเรา เราเข้าใจความต้องการที่หลากหลายของงานอีเวนต์ ไม่ว่าจะเป็นงานแต่ง งานบริษัท หรืองานปาร์ตี้ เราพร้อมมอบทั้งอุปกรณ์ทันสมัยและบริการแบบมืออาชีพ เพื่อให้ทุกช่วงเวลาของคุณเต็มไปด้วยความสนุกและความทรงจำที่น่าประทับใจ"
+    title="โฟโต้บูธ AI ครบวงจรสำหรับงานของคุณ"
+    subTitle="จาก Touch To Start ไปจนถึงภาพ AI Portrait — เลือก Male, Female หรือ Couple เลือกสไตล์ ถ่ายรูปด้วยนับถอยหลัง 3-2-1 แล้วรับผลลัพธ์พร้อม Scan QR Code, SELECT FRAME, PRINT และ DOWNLOAD ออกแบบมาเพื่อบูธงานอีเว้นท์โดยเฉพาะ"
     src={featureImage}
-    alt="SNAP a FOTO บริการโฟโต้บูธครบวงจร"
+    alt="SNAP a FOTO AI Photobooth ระบบ AI Face Swap สำหรับงานอีเว้นท์"
     features={features}
   />
 
   <FeaturesNavs
-    title={`ทำไม <span class="text-yellow-500">PhotoBooth</span> ของเราถึงเหมาะกับทุกงาน`}
+    title={`ทำไม <span class="text-slider-accent">AI Photobooth</span> ของเราถึงเหมาะกับทุกงาน`}
     tabs={[
       {
-        heading: 'อุปกรณ์ครบ จบในจุดเดียว',
+        heading: 'Touch To Start — ถ่ายง่าย สัมผัสเดียวจบ',
         content:
-          'กล้องคุณภาพสูง พร้อมชุดไฟสตูดิโอและฉากหลัง จัดเต็มทุกองค์ประกอบ ให้ภาพออกมาสวย คม ชัด ทุกช็อต',
+          'กดเริ่มได้ทันทีบนหน้าจอสัมผัส มี Live Preview นับถอยหลัง 3-2-1 และเลือก Retake หรือ Confirm ก่อนส่งให้ AI ประมวลผล แขกในงานใช้ได้เองโดยไม่ต้องมีทีมงานคอยสอน',
         svg: 'camera',
         src: features1,
-        alt: 'อุปกรณ์กล้องและไฟสตูดิโอสำหรับโฟโต้บูธ',
+        alt: 'หน้าจอ Touch To Start และการถ่ายภาพบน AI Photobooth',
         first: true,
       },
       {
-        heading: 'ใช้งานง่าย สนุกได้ทันที',
+        heading: 'AI Face Swap — เลือกสไตล์ รับภาพใหม่ทันที',
         content:
-          'ไม่ต้องมีประสบการณ์ก็ถ่ายได้ ระบบใช้งานง่าย พร้อมหน้าจอพรีวิว เห็นภาพทันทีก่อนกดถ่าย สนุกได้ทั้งงาน',
+          'เลือกประเภทภาพ Male, Female หรือ Couple จากนั้นเลือกสไตล์จากคลังเทมเพลต ระบบ AI จะสลับหน้าให้เป็นภาพพอร์ตเทรตสวย พร้อมแอนิเมชันขณะ Creating AI FaceSwap ให้ประสบการณ์สนุกและน่าตื่นเต้น',
         svg: 'smile',
         src: features2,
-        alt: 'หน้าจอพรีวิวโฟโต้บูธใช้งานง่าย',
+        alt: 'ตัวอย่างผลลัพธ์ AI Face Swap จาก AI Photobooth',
       },
       {
-        heading: 'ครบทุกฟีเจอร์ที่ต้องมี',
+        heading: 'แชร์และพิมพ์ได้ทันที — QR, Frame, Print',
         content:
-          'ทั้งพิมพ์ภาพทันที เลือกกรอบรูปได้ และแชร์ผ่าน QR Code ให้แขกในงานได้รูปกลับไปเป็นความทรงจำทันที',
+          'เมื่อได้ภาพแล้ว แขกสแกน QR Code เพื่อโหลดหรือแชร์ได้ทันที เลือกกรอบรูปเฉพาะงานด้วย SELECT FRAME ปรับตำแหน่งได้ พิมพ์ภาพ 4×6 คุณภาพสูง หรือดาวน์โหลดเก็บไว้เป็นความทรงจำ',
         svg: 'printer',
         src: features3,
-        alt: 'ตัวอย่างฟีเจอร์การใช้งานโฟโต้บูธในงานจริง',
+        alt: 'ฟีเจอร์ Scan QR Code พิมพ์ภาพ และเลือกกรอบรูปบน AI Photobooth',
       },
     ]}
   />
@@ -153,10 +170,10 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
   <section class="mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
     <div class="mx-auto mb-8 max-w-3xl text-center">
       <h2 class="text-3xl font-bold tracking-tight text-neutral-800 md:text-5xl">
-        Video Presentation
+        ดูตัวอย่างการใช้งาน
       </h2>
       <p class="mt-4 text-lg text-neutral-600">
-        ดูตัวอย่างการใช้งาน PhotoBooth ของเราผ่านวิดีโอด้านล่าง
+        ชมวิดีโอสาธิต AI Photobooth — ตั้งแต่ Touch To Start เลือกสไตล์ ถ่ายรูป จนถึงรับภาพ AI พร้อมแชร์และพิมพ์
       </p>
     </div>
 
@@ -165,7 +182,7 @@ const ogTitle = 'AI Photobooth | SNAP a FOTO';
         <iframe
           class="h-full w-full"
           src="https://www.youtube-nocookie.com/embed/yDJkXs_KJ8o"
-          title="PhotoBooth video presentation"
+          title="AI Photobooth video presentation"
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"

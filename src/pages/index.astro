@@ -21,7 +21,15 @@ import testimonial4 from '@images/testimonials/4.webp';
 import testimonial5 from '@images/testimonials/5.webp';
 import testimonial6 from '@images/testimonials/6.webp';
 import testimonial7 from '@images/testimonials/7.webp';
+import example1 from '@images/example/img_0311.webp';
+import example2 from '@images/example/img_0249.webp';
+import example3 from '@images/example/img_0274.webp';
+import example4 from '@images/example/img_0304.webp';
+import example5 from '@images/example/img_0346.webp';
+import example6 from '@images/example/img_0589.webp';
 import { partnersData, SITE } from '@/data_files/constants';
+
+const exampleImages = [example1, example2, example3, example4, example5, example6];
 
 const avatarSrcs = [
   testimonial4,
@@ -151,13 +159,19 @@ const ogTitle = SITE.title;
     <h2 class="text-xl font-bold text-neutral-800 md:text-2xl">ตัวอย่าง</h2>
   </div>
 
-  <div class="mx-auto mb-8 grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl">
-    <img src="/images/example/img_0311.webp" alt="ตัวอย่าง 1" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
-    <img src="/images/example/img_0249.webp" alt="ตัวอย่าง 2" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
-    <img src="/images/example/img_0274.webp" alt="ตัวอย่าง 3" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
-    <img src="/images/example/img_0304.webp" alt="ตัวอย่าง 4" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
-    <img src="/images/example/img_0346.webp" alt="ตัวอย่าง 5" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
-    <img src="/images/example/img_0589.webp" alt="ตัวอย่าง 6" class="rounded-lg shadow-md w-full h-auto max-w-[220px] mx-auto" loading="lazy" />
+  <div class="mx-auto mb-8 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-3">
+    {
+      exampleImages.map((image, index) => (
+        <img
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          alt={`ตัวอย่าง ${index + 1}`}
+          class="mx-auto h-auto w-full max-w-[220px] rounded-lg shadow-md"
+          loading="lazy"
+        />
+      ))
+    }
   </div>
 
   <PricingSection pricing={pricing} />
