@@ -24,10 +24,8 @@ const footerLinks = [
     section: 'Our Services',
     links: [
       { name: 'Photobooth', url: '/' },
-      ...productLinks,
       { name: '360 VDO Booth', url: '/360' },
       { name: 'Video Guestbook', url: '/guestbook' },
-      { name: 'AI Photobooth', url: '/ai-photobooth' },
     ],
   },
   {

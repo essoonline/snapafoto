@@ -1,6 +1,7 @@
 ---
 // Import the necessary dependencies
 import FooterSocialLink from '@components/ui/links/FooterSocialLink.astro';
+import EmailFooterInput from '@components/ui/forms/input/EmailFooterInput.astro';
 
 import enStrings from '@utils/navigation.ts';
 import Icon from '@components/ui/icons/Icon.astro';
@@ -50,7 +51,16 @@ const strings = enStrings;
         ))
       }
 
+      <div class="col-span-2">
+        <h3 class="font-bold text-neutral-800">Stay up to date</h3>
 
+        <form>
+          <EmailFooterInput />
+          <p class="mt-3 text-sm text-neutral-600">
+            Stay updated with photobooth tips and exclusive event packages.
+          </p>
+        </form>
+      </div>
     </div>
 
     <div

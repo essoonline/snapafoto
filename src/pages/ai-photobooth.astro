@@ -1,41 +1,18 @@
 ---
-// Import the necessary components
 import MainLayout from '@/layouts/MainLayout.astro';
-import HeroSection from '@components/sections/landing/HeroSection.astro';
-import ClientsSection from '@components/sections/landing/ClientsSection.astro';
-import FeaturesGeneral from '@components/sections/features/FeaturesGeneral.astro';
-import FeaturesNavs from '@components/sections/features/FeaturesNavs.astro';
+import PresentSlider from '@components/ui/PresentSlider.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
-import PresentSlider from '@components/ui/PresentSlider.astro';
-
-import heroImage from '@images/hero-image.webp';
 import present1 from '@images/present/1.webp';
 import present2 from '@images/present/2.webp';
 import present3 from '@images/present/3.webp';
 import present4 from '@images/present/4.webp';
 import present5 from '@images/present/5.webp';
-import features from '@data/features/ai-photobooth.json';
 import pricing from '@data/pricing/ai-photobooth.json';
-import featureImage from '@images/features-image.webp';
-import features1 from '@images/photobooth-features1.webp';
-import features2 from '@images/photobooth-features2.webp';
-import features3 from '@images/photobooth-features3.webp';
 import testimonial1 from '@images/testimonials/1.webp';
 import testimonial2 from '@images/testimonials/2.webp';
 import testimonial3 from '@images/testimonials/3.webp';
-import testimonial4 from '@images/testimonials/4.webp';
-import testimonial5 from '@images/testimonials/5.webp';
-import testimonial6 from '@images/testimonials/6.webp';
-import testimonial7 from '@images/testimonials/7.webp';
-import { partnersData, SITE } from '@/data_files/constants';
-
-const avatarSrcs = [
-  testimonial4,
-  testimonial5,
-  testimonial6,
-  testimonial7,
-];
+import { SITE } from '@/data_files/constants';
 
 const pageTitle: string = `AI Photobooth | ${SITE.title}`;
 const metaDescription =
@@ -74,67 +51,6 @@ const presentImages = [present1, present2, present3, present4, present5].map(
     <PresentSlider images={presentImages} />
   </section>
 
-  <HeroSection
-    title=`AI Photobooth <span class="text-slider-accent">เปลี่ยนหน้า เปลี่ยนสไตล์ ในไม่กี่วินาที</span>`
-    subTitle="ระบบ Touch To Start สำหรับบูธงานอีเว้นท์ — เลือกประเภทภาพ เลือกสไตล์ AI ถ่ายรูป แล้วรับภาพพอร์ตเทรตพร้อม QR และปริ้นทันที"
-    primaryBtn="จองคิว"
-    primaryBtnURL="/contact"
-    secondaryBtn="บริการทั้งหมด"
-    secondaryBtnURL="/services"
-    withReview={true}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.9</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">1k+</span> Reviews`
-    src={heroImage}
-    alt="SNAP a FOTO AI Photobooth สำหรับงานอีเว้นท์"
-  />
-
-  <ClientsSection
-    title="มั่นใจด้วยมาตรฐานที่องค์เลือกใช้"
-    subTitle="Experience the reliability chosen by industry giants."
-    partners={partnersData}
-  />
-
-  <FeaturesGeneral
-    title="โฟโต้บูธ AI ครบวงจรสำหรับงานของคุณ"
-    subTitle="จาก Touch To Start ไปจนถึงภาพ AI Portrait — เลือก Male, Female หรือ Couple เลือกสไตล์ ถ่ายรูปด้วยนับถอยหลัง 3-2-1 แล้วรับผลลัพธ์พร้อม Scan QR Code, SELECT FRAME, PRINT และ DOWNLOAD ออกแบบมาเพื่อบูธงานอีเว้นท์โดยเฉพาะ"
-    src={featureImage}
-    alt="SNAP a FOTO AI Photobooth ระบบ AI Face Swap สำหรับงานอีเว้นท์"
-    features={features}
-  />
-
-  <FeaturesNavs
-    title={`ทำไม <span class="text-slider-accent">AI Photobooth</span> ของเราถึงเหมาะกับทุกงาน`}
-    tabs={[
-      {
-        heading: 'Touch To Start — ถ่ายง่าย สัมผัสเดียวจบ',
-        content:
-          'กดเริ่มได้ทันทีบนหน้าจอสัมผัส มี Live Preview นับถอยหลัง 3-2-1 และเลือก Retake หรือ Confirm ก่อนส่งให้ AI ประมวลผล แขกในงานใช้ได้เองโดยไม่ต้องมีทีมงานคอยสอน',
-        svg: 'camera',
-        src: features1,
-        alt: 'หน้าจอ Touch To Start และการถ่ายภาพบน AI Photobooth',
-        first: true,
-      },
-      {
-        heading: 'AI Face Swap — เลือกสไตล์ รับภาพใหม่ทันที',
-        content:
-          'เลือกประเภทภาพ Male, Female หรือ Couple จากนั้นเลือกสไตล์จากคลังเทมเพลต ระบบ AI จะสลับหน้าให้เป็นภาพพอร์ตเทรตสวย พร้อมแอนิเมชันขณะ Creating AI FaceSwap ให้ประสบการณ์สนุกและน่าตื่นเต้น',
-        svg: 'smile',
-        src: features2,
-        alt: 'ตัวอย่างผลลัพธ์ AI Face Swap จาก AI Photobooth',
-      },
-      {
-        heading: 'แชร์และพิมพ์ได้ทันที — QR, Frame, Print',
-        content:
-          'เมื่อได้ภาพแล้ว แขกสแกน QR Code เพื่อโหลดหรือแชร์ได้ทันที เลือกกรอบรูปเฉพาะงานด้วย SELECT FRAME ปรับตำแหน่งได้ พิมพ์ภาพ 4×6 คุณภาพสูง หรือดาวน์โหลดเก็บไว้เป็นความทรงจำ',
-        svg: 'printer',
-        src: features3,
-        alt: 'ฟีเจอร์ Scan QR Code พิมพ์ภาพ และเลือกกรอบรูปบน AI Photobooth',
-      },
-    ]}
-  />
-
   <TestimonialsSectionAlt
     title="รีวิวจริงลูกค้าที่ใช้บริการ"
     testimonials={[
@@ -166,29 +82,4 @@ const presentImages = [present1, present2, present3, present4, present5].map(
   />
 
   <PricingSection pricing={pricing} />
-
-  <section class="mx-auto max-w-[85rem] px-4 pt-10 pb-24 sm:px-6 lg:px-8">
-    <div class="mx-auto mb-8 max-w-3xl text-center">
-      <h2 class="text-3xl font-bold tracking-tight text-neutral-800 md:text-5xl">
-        ดูตัวอย่างการใช้งาน
-      </h2>
-      <p class="mt-4 text-lg text-neutral-600">
-        ชมวิดีโอสาธิต AI Photobooth — ตั้งแต่ Touch To Start เลือกสไตล์ ถ่ายรูป จนถึงรับภาพ AI พร้อมแชร์และพิมพ์
-      </p>
-    </div>
-
-    <div class="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-neutral-300 bg-neutral-100 shadow-sm">
-      <div class="aspect-video w-full">
-        <iframe
-          class="h-full w-full"
-          src="https://www.youtube-nocookie.com/embed/yDJkXs_KJ8o"
-          title="AI Photobooth video presentation"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-  </section>
 </MainLayout>
