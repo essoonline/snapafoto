@@ -1,6 +1,6 @@
 export const productLinks = [
-  { name: 'AI Faceswap', url: 'https://ai.snapafoto.com' },
-  { name: 'AI Photobooth', url: 'https://photobooth.snapafoto.com' },
+  { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
+  { name: 'Remove BG', url: 'https://remove.snapafoto.com' },
 ];
 
 export const productNavLabel = 'Product';
