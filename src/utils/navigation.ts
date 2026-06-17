@@ -31,11 +31,12 @@ const footerLinks = [
   {
     section: 'Company',
     links: [
-      { name: 'Contact Us', url: '/contact' },
+      { name: 'Contact Us', url: 'https://www.snapafoto.com/contact' },
       {
         name: 'Reviews',
         url: 'https://www.facebook.com/snapafoto/reviews',
       },
+      { name: 'Cloud', url: 'https://cloud.snapafoto.com/' },
     ],
   },
 ];
