@@ -37,8 +37,6 @@ const footerLinks = [
         url: 'https://www.facebook.com/snapafoto/reviews',
       },
       { name: 'Cloud', url: 'https://cloud.snapafoto.com/' },
-      { name: 'Privacy Policy', url: '/privacy-policy' },
-      { name: 'Terms of Service', url: '/terms-of-service' },
     ],
   },
 ];
@@ -48,6 +46,18 @@ const socialLinks = {
   instagram: 'https://www.instagram.com/snapafoto.th/',
   youtube: 'https://www.youtube.com/@snapafoto-xt1',
 };
+
+// Legal links shown in footer
+export const legalLinks = [
+  {
+    name: 'Privacy Policy',
+    url: 'https://snapafoto.com/privacy-policy',
+  },
+  {
+    name: 'Terms of Service',
+    url: 'https://snapafoto.com/terms-of-service',
+  },
+];
 
 export default {
   navBarLinks,
