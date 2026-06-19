@@ -27,7 +27,7 @@ const strings = enStrings;
               {section.section}
             </h3>
             <ul class="mt-3 grid space-y-3">
-              {section.links.map((link, index) => (
+              {section.links.map((link) => (
                 <li>
                   <a
                     href={link.url}
@@ -35,11 +35,6 @@ const strings = enStrings;
                   >
                     {link.name}
                   </a>
-                  {section.section === 'Company' && index === 2 ? (
-                    <span class="ms-1 inline rounded-lg bg-orange-700 px-2 py-1 text-xs font-bold text-white">
-                      Fast!
-                    </span>
-                  ) : null}
                 </li>
               ))}
             </ul>
