@@ -51,11 +51,11 @@ const socialLinks = {
 export const legalLinks = [
   {
     name: 'Privacy Policy',
-    url: 'https://snapafoto.com/privacy-policy',
+    url: 'https://snapafoto.com/en/privacy-policy',
   },
   {
     name: 'Terms of Service',
-    url: 'https://snapafoto.com/terms-of-service',
+    url: 'https://snapafoto.com/en/terms-of-service',
   },
 ];
 

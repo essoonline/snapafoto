@@ -1,0 +1,43 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LegalSection from '@components/sections/misc/LegalSection.astro';
+import TermsOfServiceEn from '@components/sections/misc/legal/TermsOfServiceEn.astro';
+import { SITE } from '@data/constants';
+
+const pageTitle = `Terms of Service | ${SITE.title}`;
+const metaDescription =
+  'SNAP a FOTO Terms of Service for photo booth rental and event photography services in Thailand';
+const ogTitle = `Terms of Service | SNAP a FOTO`;
+const lastUpdated = 'June 19, 2026';
+---
+
+<MainLayout
+  title={pageTitle}
+  lang="en"
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/en/terms-of-service`,
+    url: `${SITE.url}/en/terms-of-service`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <LegalSection
+    title="Terms of Service"
+    lastUpdated={lastUpdated}
+    lastUpdatedLabel="Last updated"
+    alternateLang={{ label: 'ไทย', url: '/terms-of-service' }}
+  >
+    <TermsOfServiceEn />
+  </LegalSection>
+</MainLayout>

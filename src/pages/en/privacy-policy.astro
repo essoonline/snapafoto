@@ -1,0 +1,43 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import LegalSection from '@components/sections/misc/LegalSection.astro';
+import PrivacyPolicyEn from '@components/sections/misc/legal/PrivacyPolicyEn.astro';
+import { SITE } from '@data/constants';
+
+const pageTitle = `Privacy Policy | ${SITE.title}`;
+const metaDescription =
+  'SNAP a FOTO Privacy Policy for photo booth rental and event photography services in Thailand';
+const ogTitle = `Privacy Policy | SNAP a FOTO`;
+const lastUpdated = 'June 19, 2026';
+---
+
+<MainLayout
+  title={pageTitle}
+  lang="en"
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${SITE.url}/en/privacy-policy`,
+    url: `${SITE.url}/en/privacy-policy`,
+    name: ogTitle,
+    description: metaDescription,
+    isPartOf: {
+      '@type': 'WebSite',
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: 'en-US',
+  }}
+>
+  <LegalSection
+    title="Privacy Policy"
+    lastUpdated={lastUpdated}
+    lastUpdatedLabel="Last updated"
+    alternateLang={{ label: 'ไทย', url: '/privacy-policy' }}
+  >
+    <PrivacyPolicyEn />
+  </LegalSection>
+</MainLayout>
