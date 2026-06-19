@@ -46,7 +46,12 @@ interface Props {
         {
           /* Tab navigation - use the attribute 'first' in the first TabNav for the component to work */
         }
-        <nav class="mt-5 grid gap-4 md:mt-10" aria-label="Tabs" role="tablist">
+        <nav
+          class="--prevent-on-load-init mt-5 grid gap-4 md:mt-10"
+          aria-label="Tabs"
+          role="tablist"
+          data-feature-tablist
+        >
           {
             tabs.map((tab, index) => (
               <TabNav
@@ -100,7 +105,7 @@ interface Props {
 <script>
   const initFeatureTabs = () => {
     document.querySelectorAll('[data-feature-tabs]').forEach((section) => {
-      const tabList = section.querySelector('nav[role="tablist"]');
+      const tabList = section.querySelector('[data-feature-tablist]');
       if (!tabList) return;
 
       const tabButtons = Array.from(

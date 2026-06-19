@@ -46,40 +46,6 @@ interface Props {
     />
     {/* Define the title of the page */}
     <title>{title}</title>
-    <script>
-      import '@scripts/webmcpTools.ts';
-    </script>
-    <script>
-      type RequestIdleCallbackFn = (
-        callback: () => void,
-        options?: { timeout: number }
-      ) => number;
-
-      const requestIdle = (window as Window & {
-        requestIdleCallback?: RequestIdleCallbackFn;
-      }).requestIdleCallback;
-
-      const shouldEnableLenis = () => {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-          return false;
-        return window.matchMedia('(min-width: 1024px)').matches;
-      };
-
-      const loadLenis = async () => {
-        if (!shouldEnableLenis()) return;
-        await import('@scripts/lenisSmoothScroll.js');
-      };
-
-      if (typeof requestIdle === 'function') {
-        requestIdle(() => {
-          void loadLenis();
-        }, { timeout: 1500 });
-      } else {
-        setTimeout(() => {
-          void loadLenis();
-        }, 0);
-      }
-    </script>
   </head>
   <body
     class="flex min-h-screen flex-col bg-neutral-200 selection:bg-yellow-400 selection:text-neutral-700"
@@ -106,60 +72,7 @@ interface Props {
       )
     }
     <script>
-      type RequestIdleCallbackFn = (
-        callback: () => void,
-        options?: { timeout: number }
-      ) => number;
-
-      const requestIdle = (window as Window & {
-        requestIdleCallback?: RequestIdleCallbackFn;
-      }).requestIdleCallback;
-
-      let prelinePromise: Promise<void> | null = null;
-
-      const hasPrelineTargets = () =>
-        Boolean(
-          document.querySelector(
-            '.hs-collapse-toggle:not(.--prevent-on-load-init), .hs-dropdown:not(.--prevent-on-load-init), .hs-accordion:not(.--prevent-on-load-init), [role="tablist"]:not(select):not(.--prevent-on-load-init)'
-          )
-        );
-
-      const loadPreline = () => {
-        if (!hasPrelineTargets()) return Promise.resolve();
-
-        if (!prelinePromise) {
-          prelinePromise = import('@scripts/prelineLite.js')
-            .then(({ initPrelineLite }) => {
-              return initPrelineLite();
-            })
-            .catch(() => {
-              prelinePromise = null;
-            });
-        }
-        return prelinePromise;
-      };
-
-      const preloadPrelineOnInteraction = () => {
-        void loadPreline();
-      };
-
-      window.addEventListener('pointerdown', preloadPrelineOnInteraction, {
-        once: true,
-        passive: true,
-      });
-      window.addEventListener('keydown', preloadPrelineOnInteraction, {
-        once: true,
-      });
-
-      if (typeof requestIdle === 'function') {
-        requestIdle(() => {
-          void loadPreline();
-        }, { timeout: 1200 });
-      } else {
-        setTimeout(() => {
-          void loadPreline();
-        }, 0);
-      }
+      import '@scripts/deferredClient.ts';
     </script>
     <style>
       /* CSS rules for the page scrollbar */

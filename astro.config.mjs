@@ -10,7 +10,9 @@ export default defineConfig({
   image: {
     domains: ['images.unsplash.com'],
   },
-  prefetch: true,
+  prefetch: {
+    defaultStrategy: 'hover',
+  },
   integrations: [
     sitemap({
       i18n: {
@@ -26,7 +28,7 @@ export default defineConfig({
     }),
   ],
   experimental: {
-    clientPrerender: true,
+    clientPrerender: false,
   },
   vite: {
     plugins: [tailwindcss()],

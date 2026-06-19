@@ -2,7 +2,6 @@ const HAS_PRELINE_TARGETS = {
   accordion: '.hs-accordion:not(.--prevent-on-load-init)',
   collapse: '.hs-collapse-toggle:not(.--prevent-on-load-init)',
   dropdown: '.hs-dropdown:not(.--prevent-on-load-init)',
-  tabs: '[role="tablist"]:not(select):not(.--prevent-on-load-init)',
 };
 
 export const initPrelineLite = async () => {
@@ -28,14 +27,6 @@ export const initPrelineLite = async () => {
     tasks.push(
       import('preline/dist/dropdown.js').then(({ default: HSDropdown }) => {
         HSDropdown.autoInit();
-      })
-    );
-  }
-
-  if (document.querySelector(HAS_PRELINE_TARGETS.tabs)) {
-    tasks.push(
-      import('preline/dist/tabs.js').then(({ default: HSTabs }) => {
-        HSTabs.autoInit();
       })
     );
   }
