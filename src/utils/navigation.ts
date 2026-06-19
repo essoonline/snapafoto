@@ -37,6 +37,8 @@ const footerLinks = [
         url: 'https://www.facebook.com/snapafoto/reviews',
       },
       { name: 'Cloud', url: 'https://cloud.snapafoto.com/' },
+      { name: 'Privacy Policy', url: '/privacy-policy' },
+      { name: 'Terms of Service', url: '/terms-of-service' },
     ],
   },
 ];
