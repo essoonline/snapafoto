@@ -47,6 +47,9 @@ interface Props {
     {/* Define the title of the page */}
     <title>{title}</title>
     <script>
+      import '@scripts/webmcpTools.ts';
+    </script>
+    <script>
       type RequestIdleCallbackFn = (
         callback: () => void,
         options?: { timeout: number }

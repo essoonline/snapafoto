@@ -142,6 +142,110 @@ const avatarSrcs = [
           <div class="mt-6 flex items-center justify-center">
             <SecondaryCTA title="ติดต่อเร่งด่วนโทร.088-266-7544" url="tel:0882667544" />
           </div>
+
+          <div class="mx-auto mt-10 max-w-xl text-left">
+            <h2 class="mb-4 text-center text-xl font-bold text-neutral-800">
+              สอบถามราคา / จองบริการ
+            </h2>
+            <form
+              id="quote-inquiry-form"
+              toolname="request_quote"
+              tooldescription="Submit an inquiry to request a photo booth rental quote for a wedding, event, or party."
+              class="space-y-4 rounded-xl bg-neutral-100 p-6 shadow-sm ring-1 ring-neutral-300/60"
+            >
+              <div>
+                <label for="quote-name" class="mb-1 block text-sm font-medium text-neutral-700">
+                  ชื่อ-นามสกุล
+                </label>
+                <input
+                  type="text"
+                  id="quote-name"
+                  name="name"
+                  toolparamdescription="Customer full name."
+                  required
+                  autocomplete="name"
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                />
+              </div>
+              <div>
+                <label for="quote-email" class="mb-1 block text-sm font-medium text-neutral-700">
+                  อีเมล
+                </label>
+                <input
+                  type="email"
+                  id="quote-email"
+                  name="email"
+                  toolparamdescription="Customer email address for follow-up."
+                  required
+                  autocomplete="email"
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                />
+              </div>
+              <div>
+                <label for="quote-phone" class="mb-1 block text-sm font-medium text-neutral-700">
+                  เบอร์โทรศัพท์
+                </label>
+                <input
+                  type="tel"
+                  id="quote-phone"
+                  name="phone"
+                  toolparamdescription="Customer phone number for contact."
+                  required
+                  autocomplete="tel"
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                />
+              </div>
+              <div>
+                <label for="quote-date" class="mb-1 block text-sm font-medium text-neutral-700">
+                  วันที่จัดงาน
+                </label>
+                <input
+                  type="date"
+                  id="quote-date"
+                  name="eventDate"
+                  toolparamdescription="Event date in YYYY-MM-DD format."
+                  required
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                />
+              </div>
+              <div>
+                <label for="quote-service" class="mb-1 block text-sm font-medium text-neutral-700">
+                  บริการที่สนใจ
+                </label>
+                <select
+                  id="quote-service"
+                  name="service"
+                  toolparamdescription="Requested photo booth service type."
+                  required
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                >
+                  <option value="">เลือกบริการ</option>
+                  <option value="photobooth">Photobooth โฟโต้บูธ</option>
+                  <option value="360">360 VDO Booth</option>
+                  <option value="guestbook">Video Guestbook</option>
+                  <option value="ai-photobooth">AI Photobooth</option>
+                </select>
+              </div>
+              <div>
+                <label for="quote-message" class="mb-1 block text-sm font-medium text-neutral-700">
+                  รายละเอียดเพิ่มเติม
+                </label>
+                <textarea
+                  id="quote-message"
+                  name="message"
+                  toolparamdescription="Additional event details, location, or questions."
+                  rows="3"
+                  class="block w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-800 focus:border-orange-400 focus:ring-orange-400"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="inline-flex w-full items-center justify-center rounded-lg bg-orange-400 px-4 py-3 text-sm font-bold text-neutral-50 transition hover:bg-orange-500 focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:outline-none"
+              >
+                ส่งคำขอใบเสนอราคา
+              </button>
+            </form>
+          </div>
         </div>
 
         <div class="pt-10 lg:pt-14">
@@ -177,3 +281,42 @@ const avatarSrcs = [
     </section>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('quote-inquiry-form') as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = data.get('name');
+      const email = data.get('email');
+      const phone = data.get('phone');
+      const eventDate = data.get('eventDate');
+      const service = data.get('service');
+      const message = data.get('message');
+
+      const serviceLabels: Record<string, string> = {
+        photobooth: 'Photobooth โฟโต้บูธ',
+        '360': '360 VDO Booth',
+        guestbook: 'Video Guestbook',
+        'ai-photobooth': 'AI Photobooth',
+      };
+
+      const body = [
+        'สวัสดีครับ ต้องการสอบถามราคา/จองบริการ',
+        '',
+        `ชื่อ: ${name}`,
+        `อีเมล: ${email}`,
+        `เบอร์โทร: ${phone}`,
+        `วันที่จัดงาน: ${eventDate}`,
+        `บริการ: ${serviceLabels[String(service)] ?? service}`,
+        message ? `รายละเอียด: ${message}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n');
+
+      const mailto = `mailto:snapafoto@yahoo.com?subject=${encodeURIComponent('คำขอใบเสนอราคา SNAP a FOTO')}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
+</script>

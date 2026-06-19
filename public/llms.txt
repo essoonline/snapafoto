@@ -1,0 +1,29 @@
+# SNAP a FOTO
+
+> SNAP a FOTO บริการเช่าโฟโต้บูธและตู้ถ่ายรูปสำหรับงานแต่งงาน อีเว้นท์ ปาร์ตี้ ถ่ายไม่อั้น ปริ้นรูปไม่จำกัด กล้อง DSLR คมชัด แชร์โซเชียลได้ทันที
+
+เว็บไซต์หลักของ SNAP a FOTO สำหรับข้อมูลบริการ ราคา และช่องทางติดต่อจองโฟโต้บูธในกรุงเทพฯ และทั่วประเทศไทย
+
+## Services
+
+- [Photobooth โฟโต้บูธงานแต่ง](https://snapafoto.com/): บริการเช่าโฟโต้บูธสำหรับงานแต่งงาน อีเว้นท์ และปาร์ตี้
+- [360 VDO Booth](https://snapafoto.com/360): ตู้ถ่ายวิดีโอ 360 องศาสำหรับงานอีเว้นท์
+- [Video Guestbook](https://snapafoto.com/guestbook): ตู้วิดีโอเกสต์บุ๊กให้แขกฝากคำอวยพร
+- [AI Photobooth](https://snapafoto.com/ai-photobooth): โฟโต้บูธ AI ถ่ายรูปด้วยปัญญาประดิษฐ์
+
+## Contact
+
+- [Contact Us](https://snapafoto.com/contact): ช่องทางติดต่อ Facebook Messenger, LINE Official และโทรศัพท์
+- [Facebook Messenger](https://m.me/snapafoto): แชทสอบถามราคาและจองบริการ
+- [LINE Official @snapafoto](https://lin.ee/VOh3AuJ): ติดต่อผ่าน LINE
+
+## Company
+
+- [Privacy Policy](https://snapafoto.com/en/privacy-policy): นโยบายความเป็นส่วนตัว
+- [Terms of Service](https://snapafoto.com/en/terms-of-service): ข้อกำหนดการให้บริการ
+
+## Optional
+
+- [AI Photobooth (external)](https://ai.snapafoto.com): แพลตฟอร์ม AI Photobooth แยกต่างหาก
+- [Remove BG (external)](https://remove.snapafoto.com): เครื่องมือลบพื้นหลังรูปภาพ
+- [Cloud Gallery (external)](https://cloud.snapafoto.com/): แกลเลอรีรูปภาพออนไลน์สำหรับลูกค้า

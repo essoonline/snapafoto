@@ -1,0 +1,113 @@
+{
+  "name": "SNAP a FOTO",
+  "description": "Photo booth and event photography rental services in Thailand",
+  "url": "https://snapafoto.com",
+  "actions": [
+    {
+      "name": "request_quote",
+      "description": "Submit an inquiry to request a photo booth rental quote for an event",
+      "url": "https://snapafoto.com/contact",
+      "method": "POST",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Customer full name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Customer email address"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Customer phone number"
+          },
+          "eventDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Event date (YYYY-MM-DD)"
+          },
+          "service": {
+            "type": "string",
+            "enum": ["photobooth", "360", "guestbook", "ai-photobooth"],
+            "description": "Requested service type"
+          },
+          "message": {
+            "type": "string",
+            "description": "Additional event details or questions"
+          }
+        },
+        "required": ["name", "email", "phone", "eventDate", "service"]
+      }
+    },
+    {
+      "name": "contact_messenger",
+      "description": "Open Facebook Messenger chat with SNAP a FOTO",
+      "url": "https://m.me/snapafoto",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "contact_line",
+      "description": "Open LINE Official account @snapafoto",
+      "url": "https://lin.ee/VOh3AuJ",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "call_phone",
+      "description": "Call SNAP a FOTO for urgent inquiries",
+      "url": "tel:0882667544",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "browse_service",
+      "description": "Navigate to a specific service page",
+      "url": "https://snapafoto.com/",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "service": {
+            "type": "string",
+            "enum": ["photobooth", "360", "guestbook", "ai-photobooth"],
+            "description": "Service to browse"
+          }
+        },
+        "required": ["service"]
+      }
+    },
+    {
+      "name": "view_policy",
+      "description": "View legal policy documents",
+      "url": "https://snapafoto.com/en/privacy-policy",
+      "method": "GET",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "policy": {
+            "type": "string",
+            "enum": ["privacy", "terms"],
+            "description": "Policy document to view"
+          }
+        },
+        "required": ["policy"]
+      }
+    }
+  ]
+}

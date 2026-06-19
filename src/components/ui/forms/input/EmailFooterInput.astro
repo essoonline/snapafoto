@@ -1,9 +1,8 @@
 ---
 const {
-  label = 'Search',
+  label = 'Email',
   title = 'Subscribe',
   id = 'footer-input',
-  href = 'https://m.me/snapafoto',
   placeholder = 'Enter your email',
 } = Astro.props;
 
@@ -11,7 +10,6 @@ interface Props {
   label?: string;
   title?: string;
   id?: string;
-  href?: string;
   placeholder?: string;
 }
 ---
@@ -24,17 +22,17 @@ interface Props {
     <input
       type="email"
       id={id}
-      name="footer-input"
+      name="email"
+      toolparamdescription="Email address for newsletter and update notifications."
       class="block w-full rounded-lg border-transparent bg-neutral-100 px-4 py-3 text-sm text-neutral-600 caret-orange-400 focus:border-orange-400 focus:ring-orange-400 disabled:pointer-events-none disabled:opacity-50"
       placeholder={placeholder}
+      required
     />
   </div>
-  <a
+  <button
+    type="submit"
     class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg border border-transparent bg-orange-400 p-3 text-sm font-bold whitespace-nowrap text-neutral-50 ring-zinc-500 outline-hidden transition duration-300 hover:bg-orange-500 focus-visible:ring-3 disabled:pointer-events-none disabled:opacity-50 sm:w-auto"
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
   >
     {title}
-  </a>
+  </button>
 </div>

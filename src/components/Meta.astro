@@ -105,6 +105,21 @@ const appleTouchIcon = await getImage({
 {/* https://docs.astro.build/en/guides/integrations-guide/sitemap/ */}
 <link rel="sitemap" href="/sitemap-index.xml" />
 
+{/* Agentic Browsing auto-discovery links */}
+<link
+  rel="alternate"
+  type="application/json"
+  title="Agent Action Map"
+  href="/agents.json"
+/>
+<link rel="alternate" type="text/plain" title="LLM Context" href="/llms.txt" />
+<link
+  rel="alternate"
+  type="text/markdown"
+  title="Agent Runbook"
+  href="/agent-instructions.md"
+/>
+
 {/* Links for favicons */}
 <link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
 <link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
