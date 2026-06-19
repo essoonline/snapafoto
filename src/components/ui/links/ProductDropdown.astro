@@ -14,7 +14,7 @@ const isExternal = (url: string) => url.startsWith('http');
 <div class="product-nav-dropdown relative inline-block">
   <button
     type="button"
-    class="product-nav-dropdown__btn flex items-center gap-x-1 rounded-lg px-1.5 py-0.5 text-base font-medium text-neutral-600 ring-zinc-500 outline-hidden transition duration-300 hover:bg-neutral-200 hover:text-orange-400 focus-visible:ring-3 md:py-1 md:text-sm 2xl:text-base"
+    class="product-nav-dropdown__btn flex items-center gap-x-1 rounded-lg px-1.5 py-0.5 text-base font-medium text-neutral-700 ring-zinc-500 outline-hidden transition duration-300 hover:bg-neutral-200 hover:text-orange-700 focus-visible:ring-3 md:py-1 md:text-sm 2xl:text-base"
     aria-haspopup="menu"
     aria-expanded="false"
   >
@@ -108,8 +108,8 @@ const isExternal = (url: string) => url.startsWith('http');
       const setOpen = (open: boolean) => {
         dropdown.classList.toggle('is-open', open);
         btn?.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn?.classList.toggle('text-orange-400', open);
-        btn?.classList.toggle('text-neutral-600', !open);
+        btn?.classList.toggle('text-orange-700', open);
+        btn?.classList.toggle('text-neutral-700', !open);
       };
 
       btn?.addEventListener('click', (event) => {
