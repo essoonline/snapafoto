@@ -159,7 +159,7 @@ const ogTitle = SITE.title;
     <h2 class="text-xl font-bold text-neutral-800 md:text-2xl">ตัวอย่าง</h2>
   </div>
 
-  <div class="mx-auto mb-8 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-3">
+  <div class="mx-auto mb-8 grid w-full grid-cols-2 gap-4 md:grid-cols-6">
     {
       exampleImages.map((image, index) => (
         <img
@@ -167,7 +167,7 @@ const ogTitle = SITE.title;
           width={image.width}
           height={image.height}
           alt={`ตัวอย่าง ${index + 1}`}
-          class="mx-auto h-auto w-full max-w-[220px] rounded-lg shadow-md"
+          class="h-auto w-full rounded-lg shadow-md object-cover"
           loading="lazy"
         />
       ))
