@@ -3,11 +3,23 @@ import MainLayout from '@/layouts/MainLayout.astro';
 import PresentSlider from '@components/ui/PresentSlider.astro';
 import TestimonialsSectionAlt from '@components/sections/testimonials/TestimonialsSectionAlt.astro';
 import PricingSection from '@components/sections/pricing/PricingSection.astro';
-import present1 from '@images/present/1.webp';
-import present2 from '@images/present/2.webp';
-import present3 from '@images/present/3.webp';
-import present4 from '@images/present/4.webp';
-import present5 from '@images/present/5.webp';
+import present1 from '@images/ai/present/1.webp';
+import present2 from '@images/ai/present/2.webp';
+import present3 from '@images/ai/present/3.webp';
+import present4 from '@images/ai/present/4.webp';
+import present5 from '@images/ai/present/5.webp';
+import femaleStyles from '@images/ai/female.webp';
+import maleStyles from '@images/ai/male.webp';
+import showcase1 from '@images/ai/showcase/1.webp';
+import showcase2 from '@images/ai/showcase/2.webp';
+import showcase3 from '@images/ai/showcase/3.webp';
+import showcase4 from '@images/ai/showcase/4.webp';
+import showcase5 from '@images/ai/showcase/5.webp';
+import showcase6 from '@images/ai/showcase/6.webp';
+import showcase7 from '@images/ai/showcase/7.webp';
+import showcase8 from '@images/ai/showcase/8.webp';
+import showcase9 from '@images/ai/showcase/9.webp';
+import showcase10 from '@images/ai/showcase/10.webp';
 import pricing from '@data/pricing/ai-photobooth.json';
 import testimonial1 from '@images/testimonials/1.webp';
 import testimonial2 from '@images/testimonials/2.webp';
@@ -25,6 +37,22 @@ const presentImages = [present1, present2, present3, present4, present5].map(
     alt: `AI Photobooth sample ${index + 1}`,
   })
 );
+
+const showcaseImages = [
+  showcase1,
+  showcase2,
+  showcase3,
+  showcase4,
+  showcase5,
+  showcase6,
+  showcase7,
+  showcase8,
+  showcase9,
+  showcase10,
+].map((image, index) => ({
+  src: image.src,
+  alt: `AI Photobooth showcase ${index + 1}`,
+}));
 ---
 
 <MainLayout
@@ -49,6 +77,49 @@ const presentImages = [present1, present2, present3, present4, present5].map(
 >
   <section class="mx-auto w-full max-w-[85rem] px-4 pt-6 pb-10 sm:px-6 lg:px-8 2xl:max-w-full">
     <PresentSlider images={presentImages} />
+
+    <div class="mt-8 flex flex-col gap-6">
+      <img
+        src={femaleStyles.src}
+        alt="AI Photobooth female style templates"
+        class="h-auto w-full rounded-2xl border border-neutral-300 shadow-sm"
+        loading="lazy"
+      />
+      <img
+        src={maleStyles.src}
+        alt="AI Photobooth male style templates"
+        class="h-auto w-full rounded-2xl border border-neutral-300 shadow-sm"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
+      <h2 class="text-balance text-neutral-800">
+        <span class="block text-sm font-medium uppercase tracking-[0.35em] text-neutral-500 sm:text-base">
+          amazing
+        </span>
+        <span class="mt-1 block text-2xl font-bold uppercase tracking-[0.2em] sm:text-3xl lg:text-4xl">
+          THAILAND
+        </span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-5">
+      {
+        showcaseImages.map((image) => (
+          <div class="aspect-[3/4] overflow-hidden rounded-lg border border-neutral-300 shadow-sm">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
   </section>
 
   <TestimonialsSectionAlt

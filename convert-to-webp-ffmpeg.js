@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const dir = process.argv[2]
   ? path.resolve(process.argv[2])
-  : path.join(__dirname, 'src/images/present');
+  : path.join(__dirname, 'src/images/ai/present');
 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
