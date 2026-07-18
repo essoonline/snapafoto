@@ -6,7 +6,6 @@ import BrandLogo from '@components/BrandLogo.astro';
 
 const strings = enStrings;
 const homeUrl = '/';
-const youtubeUrl = 'https://www.youtube.com/@snapafoto-xt1';
 ---
 
 <header
@@ -82,20 +81,8 @@ const youtubeUrl = 'https://www.youtube.com/@snapafoto-xt1';
         ))}
         <div class="flex items-center gap-x-4 border-l border-neutral-300 pl-6 md:gap-x-5">
           <ProductDropdown label={productNavLabel} />
-          <a
-            href={youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center text-neutral-600 transition-colors hover:text-red-600"
-            aria-label="YouTube"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
-              <path d="M21.8 8.001s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C16.1 5 12 5 12 5h-.1s-4.1 0-7.1.1c-.4.1-1.2.1-1.9.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.9.1 6.9.1s4.1 0 7.1-.1c.4-.1 1.2-.1 1.9-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM9.8 15.2V8.8l6.4 3.2-6.4 3.2z" />
-            </svg>
-          </a>
         </div>
       </div>
     </div>
   </nav>
 </header>
-
