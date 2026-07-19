@@ -1,7 +1,7 @@
 export const productLinks = [
   { name: 'AI Photobooth', url: 'https://ai.snapafoto.com' },
   { name: 'Remove BG', url: 'https://remove.snapafoto.com' },
-  { name: 'WeddingCard', url: 'https://card.snapafoto.com/' },
+  { name: 'WeddingCard', url: 'https://www.cardkoo.com' },
 ];
 
 export const productNavLabel = 'Product';
