@@ -1,138 +1,25 @@
 ---
 import Icon from '@components/ui/icons/Icon.astro';
-import { productLinks } from '@utils/navigation.ts';
+import { productNavHref } from '@utils/navigation.ts';
 
-const { label = 'Product' } = Astro.props;
+const { label = 'AI', href = productNavHref } = Astro.props;
 
 interface Props {
   label?: string;
+  href?: string;
 }
 
 const isExternal = (url: string) => url.startsWith('http');
 ---
 
-<div class="product-nav-dropdown relative inline-block">
-  <button
-    type="button"
-    class="product-nav-dropdown__btn flex items-center gap-x-1 rounded-lg px-1.5 py-0.5 text-base font-medium text-neutral-700 ring-zinc-500 outline-hidden transition duration-300 hover:bg-neutral-200 hover:text-orange-700 focus-visible:ring-3 md:py-1 md:text-sm 2xl:text-base"
-    aria-haspopup="menu"
-    aria-expanded="false"
-  >
-    <span class="product-nav-dropdown__icon shrink-0" aria-hidden="true">
-      <Icon name="sparks" />
-    </span>
-    {label}
-    <svg
-      class="product-nav-dropdown__chevron size-4 shrink-0 transition-transform duration-200"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    ><path d="m6 9 6 6 6-6"></path></svg>
-  </button>
-
-  <div class="product-nav-dropdown__menu" role="menu">
-    <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-2 shadow-md">
-      {
-        productLinks.map((item) =>
-          isExternal(item.url) ? (
-            <a
-              href={item.url}
-              role="menuitem"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-800 focus:bg-neutral-100 focus:outline-hidden"
-            >
-              {item.name}
-            </a>
-          ) : (
-            <a
-              href={item.url}
-              role="menuitem"
-              class="block rounded-lg px-3 py-2 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-800 focus:bg-neutral-100 focus:outline-hidden"
-            >
-              {item.name}
-            </a>
-          )
-        )
-      }
-    </div>
-  </div>
-</div>
-
-<style is:global>
-  .product-nav-dropdown__icon svg {
-    margin-top: 0;
-    width: 1rem;
-    height: 1rem;
-  }
-
-  .product-nav-dropdown__menu {
-    display: none;
-    margin-top: 0.5rem;
-    min-width: 11rem;
-  }
-
-  .product-nav-dropdown.is-open .product-nav-dropdown__menu {
-    display: block;
-  }
-
-  .product-nav-dropdown.is-open .product-nav-dropdown__chevron {
-    transform: rotate(180deg);
-  }
-
-  @media (min-width: 768px) {
-    .product-nav-dropdown__menu {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      z-index: 60;
-      margin-top: 0.25rem;
-    }
-  }
-</style>
-
-<script>
-  const initProductNavDropdowns = () => {
-    document.querySelectorAll<HTMLElement>('.product-nav-dropdown').forEach((dropdown) => {
-      if (dropdown.dataset.ready === 'true') return;
-      dropdown.dataset.ready = 'true';
-
-      const btn = dropdown.querySelector<HTMLButtonElement>('.product-nav-dropdown__btn');
-
-      const setOpen = (open: boolean) => {
-        dropdown.classList.toggle('is-open', open);
-        btn?.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn?.classList.toggle('text-orange-700', open);
-        btn?.classList.toggle('text-neutral-700', !open);
-      };
-
-      btn?.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        setOpen(!dropdown.classList.contains('is-open'));
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!dropdown.contains(event.target as Node)) {
-          setOpen(false);
-        }
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') setOpen(false);
-      });
-    });
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initProductNavDropdowns);
-  } else {
-    initProductNavDropdowns();
-  }
-</script>
+<a
+  href={href}
+  class="flex items-center gap-x-1 rounded-lg px-1.5 py-0.5 text-base font-medium text-neutral-700 ring-zinc-500 outline-hidden transition duration-300 hover:bg-neutral-200 hover:text-orange-700 focus-visible:ring-3 md:py-1 md:text-sm 2xl:text-base"
+  target={isExternal(href) ? '_blank' : undefined}
+  rel={isExternal(href) ? 'noopener noreferrer' : undefined}
+>
+  <span class="shrink-0" aria-hidden="true">
+    <Icon name="sparks" />
+  </span>
+  {label}
+</a>

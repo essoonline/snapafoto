@@ -4,7 +4,8 @@ export const productLinks = [
   { name: 'WeddingCard', url: 'https://www.cardkoo.com' },
 ];
 
-export const productNavLabel = 'Product';
+export const productNavLabel = 'AI';
+export const productNavHref = 'https://ai.snapafoto.com/';
 
 export type NavBarLink = { name: string; url: string };
 
