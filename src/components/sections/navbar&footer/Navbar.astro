@@ -1,7 +1,6 @@
 ---
 import NavLink from '@components/ui/links/NavLink.astro';
-import ProductDropdown from '@components/ui/links/ProductDropdown.astro';
-import enStrings, { productNavLabel } from '@utils/navigation.ts';
+import enStrings from '@utils/navigation.ts';
 import BrandLogo from '@components/BrandLogo.astro';
 
 const strings = enStrings;
@@ -79,9 +78,6 @@ const homeUrl = '/';
         {strings.navBarLinks.map((link) => (
           <NavLink url={link.url} name={link.name} />
         ))}
-        <div class="flex items-center gap-x-4 border-l border-neutral-300 pl-6 md:gap-x-5">
-          <ProductDropdown label={productNavLabel} />
-        </div>
       </div>
     </div>
   </nav>
