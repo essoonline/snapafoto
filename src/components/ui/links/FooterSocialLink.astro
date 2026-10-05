@@ -1,12 +1,18 @@
 ---
-const { url } = Astro.props;
+const { url, label } = Astro.props;
 interface Props {
   url: string;
+  label: string;
 }
-const linkClass =
-  'inline-flex h-10 w-10 items-center justify-center gap-x-2 rounded-lg border border-transparent text-sm font-bold text-neutral-700 outline-hidden ring-zinc-500 hover:bg-neutral-500/10 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-zinc-500';
+const brandBackgrounds: Record<string, string> = {
+  Facebook: 'bg-[#1877F2]',
+  Instagram: 'bg-gradient-to-br from-[#FCAF45] via-[#E1306C] to-[#833AB4]',
+  YouTube: 'bg-[#FF0033]',
+  LINE: 'bg-[#06C755]',
+};
+const linkClass = `inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md outline-hidden transition-transform hover:scale-110 focus-visible:ring-3 focus-visible:ring-zinc-500 ${brandBackgrounds[label] ?? ''}`;
 ---
 
-<a class={linkClass} href={url} target="_blank" rel="noopener noreferrer">
+<a class={linkClass} href={url} aria-label={label} target="_blank" rel="noopener noreferrer">
   <slot />
 </a>

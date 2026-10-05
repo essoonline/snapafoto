@@ -382,7 +382,7 @@ export const Icons = {
       },
     ],
     class:
-      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+      'h-6 w-6 shrink-0 fill-current text-white',
     viewBox: '0 0 24 24',
     fill: 'currentColor',
     title: 'Facebook',
@@ -430,7 +430,7 @@ export const Icons = {
       },
     ],
     class:
-      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+      'h-7 w-7 shrink-0 fill-current text-[#6001D2]',
     viewBox: '0 0 24 24',
     fill: 'currentColor',
     title: 'Email',
@@ -442,7 +442,7 @@ export const Icons = {
       },
     ],
     class:
-      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+      'h-6 w-6 shrink-0 fill-current text-white',
     viewBox: '0 0 24 24',
     fill: 'currentColor',
     title: 'Instagram',
@@ -454,7 +454,7 @@ export const Icons = {
       },
     ],
     class:
-      'h-4 w-4 shrink-0 fill-current text-neutral-700',
+      'h-6 w-6 shrink-0 fill-current text-white',
     viewBox: '0 0 24 24',
     fill: 'currentColor',
     title: 'YouTube',

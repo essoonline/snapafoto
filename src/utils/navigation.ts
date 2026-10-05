@@ -44,9 +44,10 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  email: 'mailto:snapafoto@yahoo.com',
+  facebook: 'https://www.facebook.com/snapafoto',
   instagram: 'https://www.instagram.com/snapafoto.th/',
   youtube: 'https://www.youtube.com/@snapafoto-xt1',
+  line: 'https://lin.ee/qscp8TG',
 };
 
 // Legal links shown in footer

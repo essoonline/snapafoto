@@ -55,17 +55,25 @@ const strings = enStrings;
           <EmailFooterInput />
         </form>
 
-        <div class="mt-3">
-          <FooterSocialLink url={strings.socialLinks.email}
-            ><Icon name="emailFooter" />
+        <div class="mt-3 flex items-center gap-2">
+          <FooterSocialLink url={strings.socialLinks.facebook} label="Facebook"
+            ><Icon name="facebookFooter" />
           </FooterSocialLink>
 
-          <FooterSocialLink url={strings.socialLinks.instagram}
+          <FooterSocialLink url={strings.socialLinks.instagram} label="Instagram"
             ><Icon name="instagramFooter" /></FooterSocialLink
           >
 
-          <FooterSocialLink url={strings.socialLinks.youtube}
+          <FooterSocialLink url={strings.socialLinks.youtube} label="YouTube"
             ><Icon name="youtubeFooter" />
+          </FooterSocialLink>
+
+          <FooterSocialLink url={strings.socialLinks.line} label="LINE">
+            <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2.5" y="3.5" width="19" height="17" rx="5" fill="currentColor"></rect>
+              <path d="M9.5 20.5 8.6 17.8h6.8L14.5 20.5" fill="currentColor"></path>
+              <text x="12" y="14" text-anchor="middle" font-size="5.5" font-weight="700" fill="#06C755">LINE</text>
+            </svg>
           </FooterSocialLink>
         </div>
       </div>
