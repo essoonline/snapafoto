@@ -16,6 +16,7 @@ const backdropImages = Object.entries(
   .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
   .map(([path, image], index) => ({
     src: image.src,
+    filename: path.split('/').pop(),
     alt: `Backdrop image ${index + 1} (${path.split('/').pop()})`,
   }));
 ---
@@ -44,7 +45,7 @@ const backdropImages = Object.entries(
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {
         backdropImages.map((image) => (
-          <div class="overflow-hidden border border-neutral-200 bg-white">
+          <div class="relative overflow-hidden border border-neutral-200 bg-white">
             <button
               type="button"
               class="block h-full w-full cursor-zoom-in"
@@ -59,6 +60,29 @@ const backdropImages = Object.entries(
                 class="h-full w-full object-cover"
               />
             </button>
+            <a
+              href={image.src}
+              download={image.filename}
+              class="absolute right-2 top-2 flex size-10 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-sm transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800"
+              aria-label={`ดาวน์โหลดภาพฉากหลัง ${image.filename}`}
+              title="ดาวน์โหลดภาพ"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <path d="m7 10 5 5 5-5M12 15V3" />
+              </svg>
+            </a>
           </div>
         ))
       }
